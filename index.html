@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            background-color: rgb(red, green, blue);
+        }
+        body{
+            display: flex;
+            width: 100%;
+            height: 60vw;
+            justify-content: center; 
+            align-items: center;
+        }
+        .parent{
+            
+            
+            width: 50px;
+            height: 500px;
+            background-color: aqua;
+        }
+        .sec{
+            z-index: 1;
+        }
+        a{
+            position: absolute;
+            top: 1vw;
+            left: 1vw;
+        }
+    </style>
+</head>
+<body>
+   <div class="parent"></div>
+   <div class="sec"></div>
+   <a href="video.html">video_html</a>
+   <script>
+    let div = document.querySelector('.parent')
+    let div1 = document.querySelector('.sec')
+    setInterval(()=>{
+        let date = new Date()
+        let sec = date.getSeconds()*6
+        div.style.transform = `rotateZ(${sec}deg)`
+        div1.innerText = `${sec/6}`
+    })
+
+    // let btn = document.createElement('button')
+    // btn.innerText = `Click`
+    // btn.onclick = `my()`
+    // btn.className = `btn`
+    // btn.id = `btn`
+    // btn.setAttribute('id','btn1')
+    // document.body.appendChild(btn)
+    // console.log(btn);
+   </script>
+</body>
+</html>
