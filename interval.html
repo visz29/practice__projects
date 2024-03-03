@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Enter RGB color values</h1>
+    <input type="text" class="red" placeholder="R" onchange="red()"><br>
+    <input type="text" class="blue" placeholder="B" onchange="blue()"><br>
+    <input type="text" class="green" placeholder="G" onchange="green()"><br>
+
+    <script>
+        let r = 0
+        let b = 0
+        let g = 0
+        let check = 0
+
+        function red(){
+            let r1 = +document.querySelector('.red').value 
+            r = r1 
+            change()
+        }
+        function blue(){
+            let b1 = +document.querySelector('.blue').value 
+            b = b1
+            change()    
+        }
+        function green(){
+            let g1 = +document.querySelector('.green').value 
+            g = g1
+            change() 
+        }
+
+
+        // let i = setInterval(()=>{
+        //     document.body.style.backgroundColor = `rgb(${r},${b},${g})`
+        // },1000*2)
+
+        //      OR      //
+
+        function change(){
+            document.body.style.backgroundColor = `rgb(${r},${b},${g})`
+        }
+        
+    </script>
+    
+</body>
+</html>
