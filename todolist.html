@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* scroll-behavior: none; */
+        }
+
+        .div1 {
+            width: 100%;
+            height: 10vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 0.4vw solid pink;
+            border-radius: 2vw;
+            padding-left: 0vw;
+            
+        }
+        button{
+            height: 70%;
+            width: 10%;
+            margin-right: 4vw;
+            font-size: 2vw;
+            user-select: none;
+        }
+        input[type=text]{
+            height: 100%;
+            width: 80%;
+            border: none;
+            padding-left: 1vw;
+            margin-left: 2vw;
+            outline: none;
+            font-size: 2vw;
+        }
+        h1{
+            padding-left: 2vw;
+            overflow-wrap: anywhere;
+            text-align: center;
+            font-size: 3vw;
+            user-select: none;
+        }
+        .title{
+            background-color: black;
+            color: white;
+            width: 95%;
+            height: 4vw;
+            border-radius: 2vw;
+            font-size: 3vw;
+        }
+        h6{
+            padding-left: 1vw;
+            font-size: 2vw;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">To-Do Lsit</h1>
+</body>
+<script>
+    
+    let count = 1
+
+
+    let div1 = document.createElement('div')
+    div1.setAttribute('class', 'div1')
+
+    let input = document.createElement('input')
+    input.setAttribute('type', 'text')
+    input.setAttribute('placeholder','Enter your item')
+
+    let btn = document.createElement('button')
+    btn.innerText = 'Add Item'
+
+    div1.appendChild(input)
+    div1.appendChild(btn)
+    // console.log(div1)
+
+    document.body.appendChild(div1)
+
+    btn.addEventListener('click',add_item)
+
+    input.addEventListener('keydown',mykey)
+
+    function mykey(e){
+        
+        // console.log(e);
+        // console.log(e.code);
+        if(e.code == 'Enter'){
+            add_item()
+        }
+    }
+
+    
+
+    function add_item() {
+        if(input.value != ""){
+            
+        let val = input.value
+        input.value = ''
+        div1.remove()
+
+        let div2 = document.createElement('div')
+        div2.setAttribute('class', `div1 ${count}`)
+        
+
+        let h6 = document.createElement('h6')
+        h6.innerText = count
+
+        let h1 = document.createElement('h1')
+        h1.innerText = val
+
+        count++
+
+        div2.appendChild(h6)
+        div2.appendChild(h1)
+        // div2.appendChild(btn2)
+        // console.log(div2);
+        document.body.appendChild(div2)
+
+        document.body.appendChild(div1)
+        
+        let delete_lsit = document.querySelectorAll("div")
+        let c = 1
+        news()
+        selection(delete_lsit,c)
+        
+        }
+        
+
+    }
+    function news(){
+        // delete_lsit.forEach((e)=>{
+            // console.log(e,'for each');
+            
+            
+
+            // let del = e.querySelector("button")
+            // del.addEventListener('click',()=>{
+            //     if(e.querySelector("button").innerText == 'Delete Item'){
+            //         e.remove()
+            //     }
+            // })
+        // })
+
+        
+    }
+    
+    function selection(del,c){
+        
+        del.forEach((e)=>{
+            // console.log(e);
+            
+            e.addEventListener('dblclick',(ev)=>{
+                console.log('check',c);
+                console.log(ev);
+                e.style.color = 'red'
+                c++
+            })
+        })
+
+        
+    }
+
+</script>
+
+</html>

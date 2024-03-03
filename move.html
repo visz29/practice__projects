@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+        .div1{ 
+            width: 8vw; 
+            height: 13vw; 
+            transform: translate(0px,0px);
+            transition: 1s;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .buttons{
+            color: white;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            font-size: 4vw;
+            position: absolute;
+            border: 2px solid gray;
+            width: 20vw;
+            height: 20vw;
+            display: flex;
+            margin: 5vw;
+        }
+        .btn{
+            width: 5vw;
+            height: 5vw;
+            transform: none;
+            border: 1px solid yellow;
+            text-align: center;
+        }
+        p{
+            width: 30vw;
+            height: 10vw;
+            color: white;
+            position: absolute;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1" id="div1"><img src="../../Downloads/dore.png" alt=""></div>
+
+    <div class="buttons">
+        <div class="btn" id="left" onclick="move(id)">&larr;</div>
+        <div class="btn" id="up" onclick="move(id)">&uarr;</div>
+        <div class="btn" id="right" onclick="move(id)"> &rarr;</div>
+        <div class="btn" id="down" onclick="move(id)"> &darr;</div>
+    </div>
+    <p class="res"></p>
+    <script>
+        let div = document.querySelector('.div1')
+        // let div1 = document.getElementsByClassName('div1')
+        let show = document.querySelector('.res')
+        console.log(div);
+        // console.log(div1);
+
+
+        function move(id){
+            let r = document.querySelector('.div1').style.transform
+            // console.log(r);
+            let ind1 = r.indexOf(',')
+            // console.log(ind1, ',');
+            let ind2 = r.indexOf(')')
+            // console.log(ind2,')');
+            // console.log(r.slice(ind1+1, ind2-2));
+            let vert = r.slice(ind1+1, ind2-2)
+            let vert_1 = Number(vert)
+
+            let u = document.querySelector('.div1').style.transform
+            // console.log(u);
+            let ind3 = u.indexOf(',')
+            // console.log(ind3, ',');
+            let ind4 = u.indexOf('(')
+            // console.log(ind4,'(');
+            // console.log(u.slice(ind4+1, ind3-2));
+            let hori = u.slice(ind4+1, ind3-2)
+            let hori_1 = Number(hori)
+            // console.log(vartical);
+
+
+
+
+
+            if (id == 'left') {
+                // let res = document.querySelector('.div1').style.transform
+
+                // console.log('//////////////');
+                // console.log(hori,vert_1);
+
+                // let res1 = Number(hori)
+                console.log(hori_1, typeof hori_1);
+
+                // show.innerHTML = res1 , typeof res1
+                if(hori_1 > 100){
+                    div.style.transform = `translate(${ ( hori_1 - 50) }px,  ${vert_1}px)`
+                }   
+            }else if (id == 'right') {
+                // let res = document.querySelector('.div1').style.transform
+
+                // console.log('///////////////////')
+                // console.log(hori,vert_1);
+
+                // let res1 = Number(hori)
+                console.log(hori_1, typeof hori_1);
+
+                // show.innerHTML = res1 , typeof res1
+                if(hori_1 < 900 ){
+                    div.style.transform = `translate(${ hori_1 + 100}px, ${vert_1}px)`
+                }
+            }else if (id == 'up') {
+                // let res = document.querySelector('.div1').style.transform
+
+                // console.log('////////////////')
+                // console.log(hori_1,vert);
+
+                let res1 = Number(vert)
+                console.log(vert_1, typeof vert_1);
+
+                // show.innerHTML = res1 , typeof res1
+                if(vert_1 > 100 ){
+                    div.style.transform = `translate(${hori_1}px,${vert_1 - 50}px)`
+                }
+            }else if (id == 'down') {
+                // let res = document.querySelector('.div1').style.transform
+
+                console.log('////////////')
+                // console.log(hori_1,vert);
+
+                // let res1 = Number(vert)
+                console.log(vert_1, typeof vert_1);
+
+                // show.innerHTML = res1 , typeof res1
+                if(vert_1 < 700 ){
+                    div.style.transform = `translate(${hori_1}px, ${ vert_1 + 100}px)`
+                }
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////
+        // let body = document.querySelector('body')
+        // console.log(body);
+        // body.addEventListener('click',getClickPosition)
+
+        // function getClickPosition(e){
+        //     console.log(e.clientX , e.clientY);
+        // }
+    </script>
+</body>
+</html>
