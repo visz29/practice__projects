@@ -14,9 +14,6 @@
         body {
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             /* scroll-behavior: none; */
         }
 
@@ -26,8 +23,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 0.4vw solid pink;
-            border-radius: 2vw;
+            border: 1px solid pink;
+            border-radius: 1vw;
             padding-left: 0vw;
             
         }
@@ -35,8 +32,6 @@
             height: 70%;
             width: 10%;
             margin-right: 4vw;
-            font-size: 2vw;
-            user-select: none;
         }
         input[type=text]{
             height: 100%;
@@ -50,32 +45,15 @@
         h1{
             padding-left: 2vw;
             overflow-wrap: anywhere;
-            text-align: center;
-            font-size: 3vw;
-            user-select: none;
-        }
-        .title{
-            background-color: black;
-            color: white;
-            width: 95%;
-            height: 4vw;
-            border-radius: 2vw;
-            font-size: 3vw;
-        }
-        h6{
-            padding-left: 1vw;
-            font-size: 2vw;
-            user-select: none;
         }
     </style>
 </head>
 
 <body>
-    <h1 class="title">To-Do Lsit</h1>
+
 </body>
 <script>
-    
-    let count = 1
+    let delete_lsit = []
 
 
     let div1 = document.createElement('div')
@@ -95,7 +73,6 @@
     document.body.appendChild(div1)
 
     btn.addEventListener('click',add_item)
-
     input.addEventListener('keydown',mykey)
 
     function mykey(e){
@@ -111,67 +88,37 @@
 
     function add_item() {
         if(input.value != ""){
-            
-        let val = input.value
+            let val = input.value
         input.value = ''
         div1.remove()
 
         let div2 = document.createElement('div')
-        div2.setAttribute('class', `div1 ${count}`)
-        
-
-        let h6 = document.createElement('h6')
-        h6.innerText = count
-
+        div2.setAttribute('class', 'div1')
         let h1 = document.createElement('h1')
         h1.innerText = val
-
-        count++
-
-        div2.appendChild(h6)
+        let btn2 = document.createElement('button')
+        btn2.innerText = 'Delete Item'
         div2.appendChild(h1)
-        // div2.appendChild(btn2)
+        div2.appendChild(btn2)
         // console.log(div2);
         document.body.appendChild(div2)
 
         document.body.appendChild(div1)
         
-        let delete_lsit = document.querySelectorAll("div")
-        let c = 1
+        delete_lsit = document.querySelectorAll("div")
         news()
-        selection(delete_lsit,c)
-        
         }
-        
+
 
     }
     function news(){
-        // delete_lsit.forEach((e)=>{
+        delete_lsit.forEach((e)=>{
             // console.log(e,'for each');
-            
-            
-
-            // let del = e.querySelector("button")
-            // del.addEventListener('click',()=>{
-            //     if(e.querySelector("button").innerText == 'Delete Item'){
-            //         e.remove()
-            //     }
-            // })
-        // })
-
-        
-    }
-    
-    function selection(del,c){
-        
-        del.forEach((e)=>{
-            // console.log(e);
-            
-            e.addEventListener('dblclick',(ev)=>{
-                console.log('check',c);
-                console.log(ev);
-                e.style.color = 'red'
-                c++
+            let del = e.querySelector("button")
+            del.addEventListener('click',()=>{
+                if(e.querySelector("button").innerText == 'Delete Item'){
+                    e.remove()
+                }
             })
         })
 
