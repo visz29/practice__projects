@@ -15,9 +15,9 @@
             padding: 0;
         }
 
-        body {
-            background-color: cyan;
-            width: 100vw;
+        body{
+            background-color: black;
+            width: 100%;
             height: 100vh;
             display: flex;
             flex-wrap: wrap;
@@ -29,10 +29,11 @@
         .nav {
             margin-top: 2vw;
             width: 95vw;
-            height: 6vw;
+            height: 10vw;
             background: rgba(0, 255, 255, 0.162);
             backdrop-filter: blur(5px);
             display: flex;
+            align-items: center;
             border: 0.5vw solid transparent;
             /* border-image: linear-gradient(to right,pink,transparent,pink)1; */
             border-radius: 5vw;
@@ -51,7 +52,7 @@
             background-size: 400%;
             filter: blur(1px);
             width: 97vw;
-            height: 8vw;
+            height: 12vw;
             border-radius: 5vw;
             animation: ani 60s linear infinite;
         }
@@ -69,25 +70,87 @@
 
 
         .opt {
-            width: 16%;
-            height: 100%;
+            width: 15%;
+            height: 70%;
+            margin-left: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-family: 'Lobster';
-            font-size: 2vw;
-            transition: 0.5s;
+            font-size: 2.9vw;
+            /* transition: 5s; */
+        }
+        .formbtn{
+            width: 15%;
+            height: 70%;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Lobster';
+            font-size: 2.9vw;
+            /* transition: 5s; */
+        }
+        .video1{
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            position: absolute;
+        }
+        .nav2{
+            position: relative;
+            width: 100%;
+            height: 5vw;
+            top: -4.5vw;
+            background-image: linear-gradient(to right,transparent,rgba(255, 192, 203, 0.802),transparent,transparent,rgba(255, 192, 203, 0.802),rgba(125, 203, 251, 0.802),transparent,transparent,rgba(125, 203, 251, 0.802),transparent);
+            border-radius: 0.2vw;
+            /* background-image: url("./assets/cloud.png"); */
+            background-size: 400%;
+            animation: ani2 60s linear infinite;
+        }
+        @keyframes ani2{
+            0%{
+                background-position: 0 0 ;
+            }
+            50%{
+                background-position: 400% 0;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+        .video2{
+            z-index: -2;
+            position: relative;
+            top: -35vw;
         }
 
         video {
-            width: 100vw;
-            position: absolute;
+            width: 200vw;
+            transform: translateX(-30vw);
             top: 0px;
-            left: 0px;
+            left: 0;
             z-index: -1;
             background-size: cover;
             /* filter: blur(10px); */
+        }
+        .cloud{
+            width: 100vw;
+            height: 50vw;
+            margin-bottom: 1px;
+            top: -18vw;
+            position: relative;
+        }
+        .cheery{
+            position: relative;
+            z-index: -3;
+            width: 100%;
+            top: -4.5vw;
+            overflow: hidden;
+            border-top-right-radius: 1vw;
+            border-top-left-radius: 1vw;
         }
         .log{
             background:transparent;
@@ -103,57 +166,160 @@
             background-color: rgba(255, 192, 203, 0.539);
             border-radius: 8vw;
             background-size: 20% 30%;
-            transition: 0.5s;
+            transition: 0.s;
         }
         .con{
             margin-top: 3vw;
             width: 99vw;
-            height: 40vh;
+            height: 96vw;
+            font-size: 0.5vw;
             background-color: transparent;
             display: flex;
-            justify-content: center;
-            align-items: center;
-
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-left: 2vw;
+            transition: 0.5s;
         }
+        @media screen and (min-width:960px) {
+            .con{
+                height: 68vw;
+                transition: 0.5s;
+            }
+        }
+        
         .menu{
             margin-top: 0vw;
             width: 1vw;
             height: 1vw;
-            background-color: rgba(0, 255, 255, 0.162);
+            background-color: rgba(0, 255, 255, 0.202);
+            /* background-image: rgba(0, 255, 255, 0.572); */
+            background-size: cover;
             border-radius: 3vw;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: 1s;
+            transition: 0.1s;
             
         }
         .pages{
             width: 85%;
             height: 15%;
             margin: 3%;
-            border-radius: 3vw;
+            border-radius: 5vw;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'MV Boli';
-            font-size: 1.5vw;
+            font-size: 4vw;
             color: white;
             text-decoration: none;
             background-color: rgba(255, 192, 203, 0.649);
-            transition: 1s; 
+            transition: 0.1s; 
+            z-index: 2;
         }
         img{
             width: 100%;
             height: 100%;
         }
+        .about{
+            font-size: 2vw;
+        }
+        h1{
+            pointer-events: none;
+        }
+        
+        
+        
+        .form1{
+            width: 90%;
+            height: 88%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: transparent;
+            backdrop-filter: blur(3px);
+            border: 1vw solid rgba(255, 255, 255, 0.422);
+            border-radius: 3vw;
+            transition: 0.5s;
+            h1{
+                font-size: 5vw;
+                color: white;
+                margin-bottom: 3vw;
+            }
+            /* pointer-events: none; */
+        }
+        .input{
+            width: 50vw;
+            height: 6vw;
+            border-radius: 2vw;
+            padding-left: 2vw;
+            outline: none;
+            border: none;
+            background-color: rgba(240, 255, 255, 0.459);
+            /* pointer-events: all; */
+            z-index: 1;
+        }
+        h4{
+            width: 8vw;
+            height: 4vw;
+            text-align: center;
+            font-size: 1.5vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: azure;
+            pointer-events: none;
+        }
+        .lab{
+            width: 70vw;
+            height: 7vw;
+            margin-bottom: 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            transition: 0.3s;
+            border-radius: 3vw;
+            /* flex-direction: column; */
+        }
+        #eye{
+            background-image: url('./assets/eye_close.png');
+            background-size: cover;
+            width: 5.5vw;
+            height: 5.5vw;
+            border: none;
+            border-radius: 1.2vw;
+            transition: 0.3s;
+        }
+        .lab{
+            #email{
+                margin-right: 3vw;
+            }
+        }
+        #btn{
+                margin-left: 3vw;
+            }
+        .next{
+            height: 33vw;
+            width: 7vw;
+            font-size: 4vw;
+            background-color: aquamarine;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            border-radius:5vw ;
+            transition: 0.5s;
+        }
     </style>
 </head>
 
 <body>
-    <video muted autoplay="autoplay" loop="infinite" src="./assets/one_pece.mp4"> </video>
-
+    <div class="video1"><video muted autoplay="autoplay" loop="infinite" src="./assets/one_pece.mp4"> </video></div>
+    
     <div class="nav">
         <div id="bar" class="opt">Home</div>
         <div id="bar" class="opt">Product</div>
@@ -161,23 +327,29 @@
         <div id="bar" class="opt">About Us</div>
         <div id="bar" class="opt"></div>
         <div id="bar" class="opt"></div>
-        <div id="bar" class="opt">Sign-Up<br>Log-In</div>
+        <div id="bar" class="formbtn">Sign-Up<br>Log-In</div>               
     </div>
     <div class="con"></div>
+    <div class="nav2"></div>
+    <!-- <div class="coludParent"></div> -->
+    <div class="cheery">
+        <img class="cloud" src="./assets/colud.png" alt="">
+        <video class="video2" autoplay muted loop src="./assets/cheery_blusom.mp4"></video></div>
     
 </body>
 <script>
-    
+    let homes = {} ;
     screen_x = 0
     let allOpt = document.querySelectorAll(".opt")
     allOpt.forEach((n)=>{
         
         n.addEventListener('click',(e)=>{
         if(n.innerHTML != ""){
-            let scr_x = e.x
-            home_menu(n,scr_x   )    
+            let scr_x = e
+            home_menu(n,scr_x   ) 
+            homes = e      
         } 
-        // console.log(e.x);   
+          
         screen_x = e.x
     })
     })
@@ -199,41 +371,24 @@
             count = 1;
             r_ele(home)
         }
+        
     }
     /////////////////////////////////
     function c_ele(home,x){
-        let div1 = document.querySelectorAll('.menu')
-        div1.forEach((i)=>{
-            i.remove()
-            
-        })
+        let con = document.querySelector('.con')
+        if(con.innerHTML != ""){
+            // console.log(con.childNodes[0].className);
+            con.childNodes[0].remove()
+            let fBtn = document.querySelector('.formbtn')
+            fBtn.className = "formbtn"
+        }
+        
 
         let div = document.createElement('div')
         div.setAttribute('class','menu')
+        div.id = 'bar'
         div.innerText = home.innerText
-        if(home.innerHTML != 'Sign-Up<br>Log-In'){
-            
-            div.style.width = '10%'
-            div.style.height = '83%'
-            div.style.top = '15%'
-            div.style.marginLeft = "2vw"
-            div.style.transition = "0.5s"
-
-            let con = document.querySelector('.con')
-            con.style.height = '40vw'
-            con.style.justifyContent = "flex-start";
-            
-        }else if(home.innerHTML == 'Sign-Up<br>Log-In'){
-            let con = document.querySelector('.con')
-            con.style.height = '60vw'
-            con.style.width = '90vw'
-            con.style.justifyContent = "center";
-            
-            div.style.marginLeft = "0"
-            div.style.width = '80%'
-            div.style.height = '80%'
-            div.style.transition = "0.5s"
-        }
+        
         document.querySelector('.con').appendChild(div)
 
         if(home.innerText == 'Home'){
@@ -249,7 +404,7 @@
     function r_ele(del){
         let div1 = document.querySelectorAll('.menu')
         div1.forEach((i)=>{
-            i.style.transition = '1s'
+            
             i.remove()
         })
 
@@ -267,15 +422,18 @@
             i.remove()
         })
         }
+        
     })
 
     ////////////////////////////////////////
     function home_ele(div){
+        div.style.background = 'rgba(0, 255, 255, 0.162)'
         div.innerText = ""
-        div.style.width = '20%'
-        div.style.height = '93%'
+        div.style.width = '40vw'
+        div.style.height = '90%'
         var a = document.createElement('a')
-        a.href = 'cal.html'
+        
+        a.href = './cal.html'
         a.setAttribute('class','pages')
         a.innerText = "Calculater"
         div.appendChild(a)
@@ -305,9 +463,10 @@
         div.appendChild(a)
     }
     function product_ele(div){
+        div.style.background = 'rgba(0, 255, 255, 0.162)'
         div.innerText = ""
-        div.style.width = '20%'
-        div.style.height = '93%'
+        div.style.width = '40vw'
+        div.style.height = '90%'
         var a = document.createElement('a')
         a.href = 'https://drive.google.com/file/d/1slKR43fUt0Ni85CAUzHCir2UZnVex5Zn/view?usp=sharing'
         a.setAttribute('class','pages')
@@ -340,17 +499,18 @@
     }
     function contact_ele(div){
         let div1 = document.querySelector('.menu')
-        div1.style.width = '15%'
         div1.style.height = '82%'
 
+        div.style.background = 'rgba(0, 255, 255, 0.162)'
         div.innerText = ""
-        div.style.width = '20%'
-        div.style.height = '93%'
+        div.style.width = '35%'
+        div.style.height = '80%'
         var a = document.createElement('a')
         a.href = 'https://web.whatsapp.com/'
         a.setAttribute('class','pages')
         a.style.background = 'transparent'
-        a.style.width = '30%'
+        a.style.width = '45%'
+        a.style.height = '20%'
         a.innerHTML = '<img src="./assets/whats_app.png">'
         div.appendChild(a)
 
@@ -358,7 +518,8 @@
         a.href = 'https://www.instagram.com/i_am_thing__?igsh=MngxaTZjNmc4MHZq'
         a.setAttribute('class','pages')
         a.style.background = 'transparent'
-        a.style.width = '30%'
+        a.style.width = '50%'
+        a.style.height = '25%'
         a.innerHTML = '<img src="./assets/insta.png">'
         div.appendChild(a)
 
@@ -366,18 +527,306 @@
         a.href = 'https://www.youtube.com/@_doraemon_mix_2969'
         a.setAttribute('class','pages')
         a.style.background = 'transparent'
-        a.style.width = '30%'
+        a.style.width = '45%'
+        a.style.height = '20%'
         a.innerHTML = '<img src="./assets/you_tube.png">'
         div.appendChild(a)
     }
     function about_ele(div){
+        div.style.background = 'rgba(0, 255, 255, 0.162)'
         div.innerText = ''
+        let oldClass = div.className
+        let newClass = oldClass + " about"
+        div.className = newClass
         div.style.padding = '3%'
-        div.style.height = '80%'
-        div.style.width = '20%'
+        div.style.height = '65%'
+        div.style.width = '50%'
         let text = '<h1>About :</h1><br><h3>Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.</h3><br><h5>Unless your experience is unique, hard work and perseverance most often lead to success. If we’re scared of hard work, we likely will have a harder time reaching success.</h5>'
         div.innerHTML = text
+    }
+    function form1(div,x,home){
+        div.innerHTML = ''
+        div.style.fontSize = '2.5vw'
+        div.style.width = '95%'
+        let div1 = document.createElement('div')
+        div1.setAttribute('class','signIn')
+        div1.id = 'bar'
+        div1.innerHTML = "<div id='bar'><h2>S</h2><h2>i</h2><h2>g</h2><h2>n</h2><h2>I</h2><h2>n</h2></div>"
 
+        let div2 = document.createElement('div')
+        div2.setAttribute('class','signUp')
+        div2.id = 'bar'
+        div2.innerHTML = '<h1>Sign-Up</h1>'
+
+        div.appendChild(div2)
+        div.appendChild(div1)
+        
+
+        
+
+
+        div1.addEventListener('click',(e)=>{
+            let form1 = createForm()
+            div.style.background = 'rgba(246, 246, 246, 0.2)'
+            div.style.backgroundSize = '100% 100%'
+            div1.style.background = 'transparent'
+
+            div2.style.background = 'rgba(0, 255, 255, 0.600)'
+            div2.style.width = "10%"
+            div2.innerHTML = "<div id='bar'><h2>S</h2><h2>i</h2><h2>g</h2><h2>n</h2><h2>U</h2><h2>p</h2></div>"
+            div1.style.width = "90%"
+            div1.innerHTML = '<h1>Sign-In</h1>'
+
+            
+        })
+
+        div2.addEventListener('click',(e)=>{
+            div.style.background = 'rgba(0, 255, 255, 0.200)'
+            div.style.backgroundSize = '100% 100%'
+            div2.style.background = 'transparent'
+            div1.style.background = 'rgba(246, 246, 246, 0.612)'
+            div2.style.width = "90%"
+            div2.innerHTML = '<h1>Sign-Up</h1>'
+            div1.style.width = "10%"
+            div1.innerHTML = "<div id='bar'><h2>S</h2><h2>i</h2><h2>g</h2><h2>n</h2><h2>I</h2><h2>n</h2></div>"
+
+            
+        })
+        
+    }
+    
+    ///////////////////////////// Form Creation /////////////////////////
+    let formbtn = document.querySelector('.formbtn')
+    formbtn.addEventListener('click',()=>{
+        
+        let con = document.querySelector('.con')
+        
+
+        let form = createForm('form1')
+        let fBtn = document.querySelector('.formbtn')
+        cName = fBtn.className + ' home'
+        fBtn.className = cName
+
+        if(con.innerHTML == ""){
+            con.appendChild(form)
+        }
+        else if(con.innerHTML != ""){
+
+            // console.log(con.childNodes[0].className);
+            if(con.childNodes[0].className == 'menu'){
+                fBtn.className = "formbtn home"
+                con.childNodes[0].remove()
+                con.appendChild(form)
+            }else if(con.childNodes[0].className == 'menu about'){
+                fBtn.className = "formbtn home"
+                con.childNodes[0].remove()
+                con.appendChild(form)
+            }else{
+                fBtn.className = "formbtn"
+                con.innerHTML = ""
+            }
+                
+
+            let allopt = document.querySelectorAll('.opt')
+            allopt.forEach((o)=>{
+                o.className = 'opt'
+            })
+            
+        }
+        
+    })
+
+
+
+    function createForm(fName){
+        if(fName == 'form1'){
+        let res;
+    
+        let h1 = document.createElement('h1')
+        h1.innerText = 'Sign-In'
+        h1.className = 'heading'
+        //
+        
+        let form = document.createElement('form')
+        form.setAttribute('name','form1')
+        form.setAttribute('class','form1')
+        //
+        let div1 = document.createElement('div')
+        div1.className = 'lab'
+        //
+        let name = document.createElement('input')
+        name.setAttribute('type','email')
+        name.className = 'input'
+        name.id = 'email'
+        name.name = 'name1'
+        //
+        let h4 = document.createElement('h4')
+        h4.innerText = 'Email'
+        //
+        form.appendChild(h1)
+        div1.appendChild(h4)
+        div1.appendChild(name)
+        form.appendChild(div1)
+        //
+
+        let div2 = document.createElement('div')
+        div2.className = 'lab'
+        //
+        let email = document.createElement('input')
+        email.setAttribute('type','password')
+        email.className = 'input'
+        email.id = 'pass'
+        email.name = 'email'
+        //
+        let eye = document.createElement('div')
+        eye.id = "eye"
+
+        //
+        let h4_2 = document.createElement('h4')
+        h4_2.innerText = 'Password'
+        //
+        
+        div2.appendChild(h4_2)
+        div2.appendChild(email)
+        div2.appendChild(eye)
+        form.appendChild(div2)
+        //
+
+
+        let div3 = document.createElement('div')
+        div3.className = 'lab'
+        //
+        let btn = document.createElement('input')
+        btn.setAttribute('type','submit')
+        btn.className = 'input'
+        btn.id = 'btn'
+        btn.name = 'btn'
+        btn.value = 'Submit'
+        btn.addEventListener('click',(e)=>{
+            e.preventDefault()
+        })
+
+        div3.appendChild(btn)
+        form.appendChild(div3)
+        
+        //
+        let next = document.createElement('div')
+        next.className = 'next'
+        next.innerHTML = "S<br>I<br>G<br>N<br>U<br>P"
+        next.style.position = 'absolute'
+        // height: 33vw;
+        // width: 7vw;
+        // next.style.height = '33vw'
+        // next.style.height = '7vw'
+        // next.style.transition = '0.5s'
+        next.style.right = '0'
+        form.appendChild(next)
+
+        next.addEventListener('click',()=>{
+            let con = document.querySelector('.con')
+            let form = createForm('form2')
+            con.childNodes[0].remove()
+
+            con.appendChild(form)
+
+
+        })
+        
+        res = form
+        return res  
+    }else if(fName == 'form2'){
+        let res;
+    
+        let h1 = document.createElement('h1')
+        h1.innerText = 'Sign-Up'
+        h1.className = 'heading'
+        //
+        
+        let form = document.createElement('form')
+        form.setAttribute('name','form1')
+        form.setAttribute('class','form1')
+        //
+        let div1 = document.createElement('div')
+        div1.className = 'lab'
+        //
+        let name = document.createElement('input')
+        name.setAttribute('type','email')
+        name.className = 'input'
+        name.id = 'email'
+        name.name = 'name1'
+        //
+        let h4 = document.createElement('h4')
+        h4.innerText = 'Email'
+        //
+        form.appendChild(h1)
+        div1.appendChild(h4)
+        div1.appendChild(name)
+        form.appendChild(div1)
+        //
+
+        let div2 = document.createElement('div')
+        div2.className = 'lab'
+        //
+        let email = document.createElement('input')
+        email.setAttribute('type','password')
+        email.className = 'input'
+        email.id = 'pass'
+        email.name = 'email'
+        //
+        let eye = document.createElement('div')
+        eye.id = "eye"
+
+        //
+        let h4_2 = document.createElement('h4')
+        h4_2.innerText = 'Password'
+        //
+        
+        div2.appendChild(h4_2)
+        div2.appendChild(email)
+        div2.appendChild(eye)
+        form.appendChild(div2)
+        //
+
+
+        let div3 = document.createElement('div')
+        div3.className = 'lab'
+        //
+        let btn = document.createElement('input')
+        btn.setAttribute('type','submit')
+        btn.className = 'input'
+        btn.id = 'btn'
+        btn.name = 'btn'
+        btn.value = 'Submit'
+        btn.addEventListener('click',(e)=>{
+            e.preventDefault()
+        })
+
+        div3.appendChild(btn)
+        form.appendChild(div3)
+        
+        //
+        let next = document.createElement('div')
+        next.className = 'next'
+        next.innerHTML = "S<br>I<br>G<br>N<br>I<br>N"
+        next.style.position = 'absolute'
+        next.style.transition = '0.5s'
+        next.style.left = '0'
+        form.appendChild(next)
+
+        next.addEventListener('click',()=>{
+            let con = document.querySelector('.con')
+            let form = createForm('form1')
+            con.childNodes[0].remove()
+
+            con.appendChild(form)
+
+
+        })
+        
+        res = form
+        return res 
+    }
+        
     }
 </script>
 </html>
