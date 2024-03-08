@@ -249,93 +249,13 @@
 
         h1 {
             pointer-events: none;
+            font-size: 8vw;
+            margin-bottom: 4vw;
         }
 
 
 
-        .form1 {
-            width: 99%;
-            height: 89%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: transparent;
-            backdrop-filter: blur(3px);
-            border: 1vw solid rgba(255, 255, 255, 0.422);
-            border-radius: 3vw;
-            transition: 0.5s;
-
-            h1 {
-                font-size: 5vw;
-                color: white;
-                margin-bottom: 3vw;
-            }
-
-            /* pointer-events: none; */
-        }
-
-        .input {
-            width: 50vw;
-            height: 6vw;
-            border-radius: 2vw;
-            padding-left: 2vw;
-            outline: none;
-            border: none;
-            background-color: rgba(240, 255, 255, 0.459);
-            /* pointer-events: all; */
-            z-index: 1;
-        }
-
-        h4 {
-            width: 8vw;
-            height: 4vw;
-            margin-right: 10vw;
-            text-align: center;
-            font-size: 2.5vw;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            color: azure;
-            pointer-events: none;
-        }
-
-        .lab {
-            width: 80vw;
-            height: 7vw;
-            margin-bottom: 5vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            transition: 0.3s;
-            border-radius: 3vw;
-            /* flex-direction: column; */
-        }
-
-        #eye {
-            background-image: url('./assets/eye_close.png');
-            background-size: cover;
-            width: 5.5vw;
-            height: 5.5vw;
-            border: none;
-            border-radius: 1.2vw;
-            transition: 0.3s;
-        }
-
-        #pass{
-                margin-left: 5vw;
-            }
-        #re_pass{
-            margin-right: 1vw;
-        }
-
-        #btn {
-            margin-left: 17vw;
-        }
-        #h4pass{
-            margin-right: 2vw;
-        }
+        
 
         .next {
             position: absolute;
@@ -349,6 +269,80 @@
             right: 0;
             border-radius: 5vw;
             transition: 0.5s;
+        } 
+        /* GHFGH  ////////////////////////////////////////////////////// */
+        
+        
+        form{
+            width: 99%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: transparent;
+            backdrop-filter: blur(3px);
+            border: 1vw solid rgba(255, 255, 255, 0.422);
+            border-radius: 3vw;
+        }
+        .lab{
+            width: 70vw;
+            height: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            transition: 0.3s;
+            border-radius: 3vw;
+            
+        }
+        .lab:hover{
+            background-color: rgba(134, 255, 255, 0.184);
+            box-shadow: 0px 6px 20px 6px rgba(0, 0, 0, 0.251);
+            transition: 0.3s;
+        }
+        .last:hover{
+            background-color: transparent;
+            box-shadow: none;
+        }
+        .pass{
+            display: flex;    
+        }
+        h4{
+            width: 8vw;
+            height: 4vw;
+            text-align: center;
+            font-size: 3.5vw;
+            margin-right: 8vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: azure;
+        }
+        .input{
+            width: 40vw;
+            height: 7vw;
+            border-radius: 2vw;
+            padding-left: 2vw;
+            outline: none;
+            border: none;
+            background-color: rgba(240, 255, 255, 0.459);
+        }
+        #eye{
+            background-image: url('./assets/eye_close.png');
+            background-size: cover;
+            width: 6vw;
+            height: 6vw;
+            border: none;
+            border-radius: 1.2vw;
+            transition: 0.3s;
+        }
+        #btn{
+            width: 15vw;
+            height: 5vw;
+            border-radius:2vw;
+            border: none;
+            background-color: rgba(231, 222, 225, 0.537);
         }
     </style>
 </head>
@@ -740,7 +734,7 @@
             btn.name = 'btn'
             btn.value = 'Log-In'
             btn.addEventListener('click', (e) => {
-                e.preventDefault()
+                
             })
 
             div3.appendChild(btn)
@@ -771,7 +765,7 @@
                 con.appendChild(form)
                 form.style.width = '99%'
                 form.style.height = '89%'
-                changeSize(form)
+                
 
             })
 
@@ -779,121 +773,21 @@
             return res
         } else if (fName == 'form2') {
             let res;
-
-            let h1 = document.createElement('h1')
-            h1.innerText = 'Sign-Up'
-            h1.className = 'heading'
-            
-            //
-
-            let form = document.createElement('form')
-            form.setAttribute('name', 'form1')
-            form.setAttribute('class', 'form1')
-            form.appendChild(h1)
+            let f = `<form action="" name="form1" class="form1"><h1>Sign-Up</h1>
+        <div class="lab" for="name"><h4>Name</h4><input type="text" name="name1" id="name" class="input"></div><br>
+        <div class="lab" for="email"><h4>Email</h4> <input type="text" name="email" id="email" class="input"></div><br>
+        <div class="lab" for="pass"><h4 style="margin-left: 3vw;">Password</h4><input type="password" name="pass" id="pass" class="input pass"><div id="eye"></div></div><br>
+        <div class="lab" for="re_pass"><h4 style="margin-right: 8vw;">Re-Password</h4><input type="password" name="re_pass" id="re_pass" class="input"></div>
+        <div for="" class="lab last"> <input type="submit" id="btn"></div>
+    </form>`
 
             //
-            let div0 = document.createElement('div')
-            div0.className = 'lab'
-            let name = document.createElement('input')
-            name.setAttribute('type','text')
-            name.className = 'input'
-            name.id = 'name'
-            name.name = 'name'
-
-            let h4_0 = document.createElement('h4')
-            h4_0.innerText = 'Name'
-            div0.appendChild(h4_0)
-            div0.appendChild(name)
-            form.appendChild(div0)
-            //
-            let div1 = document.createElement('div')
-            div1.className = 'lab'
-            //
-            
-            //
-            let email = document.createElement('input')
-            email.setAttribute('type', 'email')
-            email.className = 'input'
-            email.id = 'email'
-            email.name = 'email'
-            //
-            let h4 = document.createElement('h4')
-            h4.innerText = 'Email'
-            //
-            
-            div1.appendChild(h4)
-            div1.appendChild(email)
-            form.appendChild(div1)
-            //
-
-            let div2 = document.createElement('div')
-            div2.className = 'lab'
-            //
-            let pass = document.createElement('input')
-            pass.setAttribute('type', 'password')
-            pass.className = 'input'
-            pass.id = 'pass'
-            pass.name = 'pass'
-            //
-            let eye = document.createElement('div')
-            eye.id = "eye"
-
-            //
-            let h4_2 = document.createElement('h4')
-            h4_2.id = 'h4pass'
-            h4_2.innerText = 'Password'
-            //
-
-            div2.appendChild(h4_2)
-            div2.appendChild(pass)
-            div2.appendChild(eye)
-            form.appendChild(div2)
-            /////
-            let div4 = document.createElement('div')
-            div4.className = 'lab'
-            //
-            let re_pass = document.createElement('input')
-            re_pass.setAttribute('type', 'password')
-            re_pass.className = 'input'
-            re_pass.id = 're_pass'
-            re_pass.name = 're_pass'
-            //
-            
-
-            //
-            let h4_3 = document.createElement('h4')
-            h4_3.innerText = 'Re-Password'
-            //
-
-            div4.appendChild(h4_3)
-            div4.appendChild(re_pass)
-            // div4.appendChild(eye)
-            form.appendChild(div4)
-            //////
-
-
-            let div3 = document.createElement('div')
-            div3.className = 'lab'
-            //
-            let btn = document.createElement('input')
-            btn.setAttribute('type', 'submit') 
-            btn.className = 'input'
-            btn.id = 'btn'
-            btn.name = 'btn'
-            btn.value = 'Create'
-            btn.addEventListener('click', (e) => {
-                e.preventDefault()
-            })
-
-            div3.appendChild(btn)
-            form.appendChild(div3)
-
-            //
+            let con = document.querySelector('.con').innerHTML = f
+            let form = document.querySelector('.form1')
             let next = document.createElement('div')
             next.className = 'next'
             next.innerHTML = "S<br>I<br>G<br>N<br>I<br>N"
             next.style.left = '92.7%'
-
 
             form.appendChild(next)
 
@@ -914,24 +808,21 @@
                     con.appendChild(form)
                     form.style.width = '99%'
                     form.style.height = '89%'
-                    changeSize(form)
+                    
 
                     clearInterval(stop2)
                 }, 1000/3);
 
             })
+            /////////////////////////// form validation 
+            
 
             res = form
             return res
         }
 
     }
-    function changeSize(form) {
-        console.log(form);
-        let form1 = document.querySelector('.form1')
 
-
-    }
-</script>
+    </script>
 
 </html>
