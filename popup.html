@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .movie{
+            width: 30%;
+            height: 30%;
+        }
+    </style>
+</head>
+<script>
+    // window.print()
+</script>
+<body>
+    <!-- <p>Gold Price Today</p>
+    <h1 id="gold">67,455.00</h1> -->
+    <div class="movieBox">
+        <div class="movie"></div>
+        <div class="movie"></div>
+        <div class="movie"></div>
+        <div class="movie"></div>
+        <div class="movie"></div>
+        <div class="movie"></div>
+    </div>
+    
+    
+</body>
+<script>
+    // window.print()
+    // API,s
+    const APIURL =
+"https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+const SEARCHAPI =
+"https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+
+getMovies = async (url) => {
+    let responce = await fetch(url)
+    let data = await responce.json()
+    
+    // console.log(data.results);
+    // return data.results
+    let data1 = data.results
+    showMovies(data1)
+
+}
+let data = getMovies(APIURL)
+
+function showMovies(data){
+    console.log(data);
+    data.forEach((n) => {
+        console.log(n);
+    })
+}
+</script>
+</html>
