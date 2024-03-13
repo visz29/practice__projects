@@ -26,15 +26,18 @@
             flex-direction: column;
             align-content: flex-start;
             justify-content: flex-end;
+            border-radius: 1vw;
+            overflow: hidden;
+            transition: 0.5s;
         }
         .movieBox{
             /* margin: 1vw; */
             width: 95%;
         
-            background: gray;
+            background: transparent;
             display: grid;
             grid-gap: 0.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
         }
         #heading{
             color: black;
@@ -48,6 +51,7 @@
             align-items: center;
             margin-bottom: 5vw;
             border-radius: 5vw;
+    
 
             .srcImg{
                 width: 12%;
@@ -62,7 +66,29 @@
                 font-size: 7vw;
                 padding-left: 5vw;
                 caret-color: rgb(248, 40, 238);
+                
             }
+        }
+        .infoDiv{
+            color: transparent;
+            background: rgba(255, 255, 255, 0.575);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            top: 100%;
+            color: black;
+            border-radius: 2vw;
+            transition: 0.4s;
+        }
+        .title{
+            padding: 1vw;
+        }
+        .year{
+            font-size: 1.5vw;
+            padding: 1vw;
         }
     </style>
 </head>
@@ -72,7 +98,7 @@
 <body>
     <!-- <p>Gold Price Today</p> -->
     <h1 id="heading">Movies Search</h1><br>
-    <div class="srcBar"><img class="srcImg" src="./assets/search_1.png" alt=""><input type="text" class="src"></div>
+    <div class="srcBar"><img class="srcImg" src="./search_1.png" alt=""><input type="text" class="src"></div>
     <div class="movieBox"></div>
     
     
@@ -87,7 +113,7 @@ const SEARCHAPI =
 "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 getMovies = async (url) => {
-    console.log(url,"Start");
+    // console.log(url,"Start");
     let data ;
     try{
     let responce = await fetch(url)
@@ -98,46 +124,73 @@ getMovies = async (url) => {
     
     // console.log(data.results);
     // return data.results
+    // console.log(data,"data");
     let data1 = data.results
-    console.log(data1,"end");
+    // console.log(data1,"end");
+    
     showMovies(data1)
 
 }
 let data = getMovies(APIURL)
 
 function showMovies(data){
+    let movieBox = document.querySelector('.movieBox')
+    // console.log(data,'show');
     // console.log(data);
+    if(data != ""){
     data.forEach((n) => {
+
         let div = createDiv()
-        let movieBox = document.querySelector('.movieBox')
+        // console.log(div);
+        movieBox.style.color = "white"
 
         div.style.backgroundImage = `url(${IMGPATH + n.poster_path})`
-        div.children[0].innerHTML = n.title
-        div.children[2].innerHTML = n.release_date
+        div.children[0].children[0].innerHTML = n.title
+        div.children[0].children[2].innerHTML = n.release_date + '<br> overview :' + n.overview
+
+        console.log(n)
+        
 
         movieBox.appendChild(div)
         
         // console.log(n.poster_path);
         // console.log(n.release_date);
         // console.log(n.title);
+        
+        
 
     })
+    let movie = document.querySelectorAll('.movie')
+    showInfo(movie)
+    }else if(data == ""){
+        
+        movieBox.innerHTML = "<h1>Movie Name Not Found !</h1>"
+        movieBox.style.color = "black" 
+        
+    }
 }
 function createDiv(){
     // `<div class="movie"><h1 class="title"></h1> <h3 class="year"></h3></div>`
     let div = document.createElement('div')
     div.className = 'movie'
 
+    let infoDiv = document.createElement('div')
+    infoDiv.className = 'infoDiv'
+
     let h1 = document.createElement('h1')
     h1.className = 'title'
-    div.appendChild(h1)
+    infoDiv.appendChild(h1)
 
     let br = document.createElement('br')
-    div.appendChild(br)
+    infoDiv.appendChild(br)
 
     let h3 = document.createElement('h3')
     h3.className = 'year'
-    div.appendChild(h3)
+    infoDiv.appendChild(h3)
+
+    div.appendChild(infoDiv)
+
+    // console.log(div,'hi');
 
     return div
 }
@@ -156,9 +209,24 @@ srcBtn.addEventListener("keyup",(e) => {
         getMovies(SEARCHAPI + search)
 
     }
-    
-
-    // srcMovie()
 })
+
+function showInfo(movie){
+    // console.log(movie);
+    movie.forEach((m) => {
+        // console.log(m);
+        m.addEventListener('click',(e) => {
+
+            // m.children[0].style.transition = '0.5s'
+
+            if( m.children[0].style.top != '50%'){
+            console.log(m.children);
+            m.children[0].style.top = '50%'
+            }else{
+                m.children[0].style.top = '100%'
+            }
+        })
+    })
+}
 </script>
 </html>
