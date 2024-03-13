@@ -5,9 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            
+            display: flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            color: white;
+        }
         .movie{
-            width: 30%;
-            height: 30%;
+            width: 99%;
+            height: 40vw;
+            background: orange;
+            background-size: cover;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: flex-start;
+            justify-content: flex-end;
+        }
+        .movieBox{
+            /* margin: 1vw; */
+            width: 95%;
+        
+            background: gray;
+            display: grid;
+            grid-gap: 0.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+        }
+        #heading{
+            color: black;
+        }
+        .srcBar{
+            width: 90vw;
+            height: 10vw;
+            background: rgba(100, 148, 237, 0.623);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 5vw;
+            border-radius: 5vw;
+
+            .srcImg{
+                width: 12%;
+                height: 100%;
+            }
+            .src{
+                width: 87%;
+                height: 100%;
+                background: transparent;
+                outline: none;
+                border: none;
+                font-size: 7vw;
+                padding-left: 5vw;
+                caret-color: rgb(248, 40, 238);
+            }
         }
     </style>
 </head>
@@ -15,16 +70,10 @@
     // window.print()
 </script>
 <body>
-    <!-- <p>Gold Price Today</p>
-    <h1 id="gold">67,455.00</h1> -->
-    <div class="movieBox">
-        <div class="movie"></div>
-        <div class="movie"></div>
-        <div class="movie"></div>
-        <div class="movie"></div>
-        <div class="movie"></div>
-        <div class="movie"></div>
-    </div>
+    <!-- <p>Gold Price Today</p> -->
+    <h1 id="heading">Movies Search</h1><br>
+    <div class="srcBar"><img class="srcImg" src="./search_1.png" alt=""><input type="text" class="src"></div>
+    <div class="movieBox"></div>
     
     
 </body>
@@ -38,22 +87,78 @@ const SEARCHAPI =
 "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 getMovies = async (url) => {
+    console.log(url,"Start");
+    let data ;
+    try{
     let responce = await fetch(url)
-    let data = await responce.json()
+    data = await responce.json()
+    }catch(error){
+        console.log("Can't catch data from API ! ");
+    }
     
     // console.log(data.results);
     // return data.results
     let data1 = data.results
+    console.log(data1,"end");
     showMovies(data1)
 
 }
 let data = getMovies(APIURL)
 
 function showMovies(data){
-    console.log(data);
+    // console.log(data);
     data.forEach((n) => {
-        console.log(n);
+        let div = createDiv()
+        let movieBox = document.querySelector('.movieBox')
+
+        div.style.backgroundImage = `url(${IMGPATH + n.poster_path})`
+        div.children[0].innerHTML = n.title
+        div.children[2].innerHTML = n.release_date
+
+        movieBox.appendChild(div)
+        
+        // console.log(n.poster_path);
+        // console.log(n.release_date);
+        // console.log(n.title);
+
     })
 }
+function createDiv(){
+    // `<div class="movie"><h1 class="title"></h1> <h3 class="year"></h3></div>`
+    let div = document.createElement('div')
+    div.className = 'movie'
+
+    let h1 = document.createElement('h1')
+    h1.className = 'title'
+    div.appendChild(h1)
+
+    let br = document.createElement('br')
+    div.appendChild(br)
+
+    let h3 = document.createElement('h3')
+    h3.className = 'year'
+    div.appendChild(h3)
+
+    return div
+}
+let srcBtn = document.querySelector('.src')
+srcBtn.addEventListener("keyup",(e) => {
+    let search = e.target.value
+    let movieBox = document.querySelector('.movieBox')
+    // console.log(search);
+    if(search == ""){
+        movieBox.innerHTML = ""
+        getMovies(APIURL)
+    }
+    else
+    {
+        movieBox.innerHTML = ""
+        getMovies(SEARCHAPI + search)
+
+    }
+    
+
+    // srcMovie()
+})
 </script>
 </html>
