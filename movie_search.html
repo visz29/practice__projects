@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .head {
+            font-size: 10vw;
+            font-family: 'Fugaz One';
+            margin: 4vw;
+            padding: 2vw;
+            border-radius: 3vw;
+            /* box-shadow: inset 30px 30px 80px, inset -30px -30px 0px rgb(255, 255, 255); */
+            box-shadow: rgb(178, 185, 206) 10px 10px 8px 0px inset, rgb(238, 237, 237) -3.2px -3.2px 8px 0px inset;
+            background: linear-gradient(to right, pink, cyan, rgb(219, 73, 158), pink);
+            background-clip: text;
+            color: transparent;
+            background-size: 200%;
+            animation: ani 5s linear infinite;
+        }
+
+        .con {
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3vw;
+        }
+
+        .movie {
+            width: 90%;
+            height: 17%;
+            background: rgba(235, 247, 247, 0.26);
+            display: flex;
+            justify-content: space-between;
+            /* border: 0.5vw solid gray; */
+            border-radius: 3vw;
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.381), inset -20px -20px 30px rgba(255, 255, 255, 0.267);
+            margin-bottom: 2vw;
+            margin-top: 1vw;
+
+            h1 {
+                text-align: center;
+                justify-content: center;
+                background: linear-gradient(to right, pink, cyan, rgb(219, 73, 158), pink);
+                background-clip: text;
+                color: transparent;
+                background-size: 200%;
+                animation: ani 5s linear infinite;
+                font-size: 3vw;
+                display: flex;
+                align-items: center;
+                width: 40%;
+            }
+
+            h4 {
+                text-align: center;
+                justify-content: center;
+                width: 20%;
+                font-size: 2.5vw;
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                height: 100%;
+                width: 10vh;
+                border-radius: 2vw;
+            }
+        }
+
+        @keyframes ani {
+            0% {
+                background-position: 0% 0;
+            }
+
+            50% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: 0% 0;
+            }
+        }
+        .search{
+            width: 90%;
+            height: 15vw;
+            margin-bottom: 0vw;
+            box-shadow: rgb(178, 185, 206) 10px 10px 8px 0px inset, rgb(238, 237, 237) -3.2px -3.2px 8px 0px inset;
+            border-radius: 10vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search_icon{
+            height: 100%;
+            width: 18%;
+            margin-left: 2vw;
+            
+        }
+        .input{
+            width: 80%;
+            height: 85%;
+            border-radius: 8vw;
+            margin-right: 1%;
+            outline: none;
+            border: none;
+            font-size: 6vw;
+            padding-left: 5vw;
+            box-shadow: rgb(178, 185, 206) 12px 12px 8px 0px inset, rgb(238, 237, 237) -3.6px -3.6px 8px 0px inset;
+
+        }
+        .sortBox{
+            width: 45%;
+            height: 1vw;
+            margin-bottom: 8vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* z-index: -1; */
+            transition: 0.4s;
+
+            .option{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                background:cornsilk;
+                border-radius: 5vw ;
+                box-shadow: rgb(178, 185, 206) 12px 12px 8px 0px inset, rgb(238, 237, 237) -3.6px -3.6px 8px 0px inset;
+                transform: scaleY(0%);
+                transition: 0.4s;
+
+                button{
+                    width: 40%;
+                    height: 100%;
+                    border: none;
+                    background: transparent;
+                    font-size: 2.5vw;
+                }
+                select{
+                    width: 30%;
+                    height: 100%;
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    border-left: 0.1vw solid silver;
+                    font-size: 2vw;
+                    
+                }
+            }
+            img{
+                width: 10%;
+                /* z-index: 3;
+                cursor: pointer; */
+               
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="head">MOVIES</h1>
+    <div class="search">
+       <img src="./assets/search_1.png" class="search_icon"> <input type="text" class="input">
+    </div>
+    <div class="sortBox">
+        <div class="option">
+            <button class="sortBtn">SORT</button>
+            <select name="type" class="select">
+                <option value="type">TYPE</option>
+                <option value="year">YEAR</option>
+                <option value="abc">ABC</option>
+                <option value="genre">GENRE</option>
+                <option value="rating">RATINGS</option>
+            </select>
+            <select name="order" class="order">
+                <option value="asc">Ascending</option>
+                <option value="dec">Descending</option>    
+            </select>
+        </div>
+        <img src="./assets/icons8-sort-96.png"  class="imgBtn">
+    </div>
+    <div class="con">
+        
+    </div>
+    <script>
+        let movie_collection = [
+            
+            {
+                "poster": "./assets/wishDragon.jpg",
+                "year": 2010,
+                "title": "Wish Dragon",
+                "genre": ["Animation", "Action"],
+                "rating": 7.2
+            },
+            {
+                "poster": "./assets/bigHero6.jpg",
+                "year": 2010,
+                "title": "Big Hero 6",
+                "genre": ["Animation", "Action"],
+                "rating": 7.8
+            },
+            {
+                "poster": "./assets/coco.jpg",
+                "year": 2010,
+                "title": "Coco",
+                "genre": ["Animation", "Comedy"],
+                "rating": 8.4
+            },
+            {
+                "poster": "./assets/moana.jpg",
+                "year": 2010,
+                "title": "Moana",
+                "genre": ["Animation", "Comedy"],
+                "rating": 7.6
+            },
+            {
+                "poster": "./assets/raya.jpg",
+                "year": 2010,
+                "title": "Raya and the last dragon",
+                "genre": ["Animation", "Comedy"],
+                "rating": 7.3
+            },
+            {
+                "poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRahMdIAUM-EOFYqEUdg55XHG4JQYaskXKhDG8WeHkyZH2DXZVz",
+                "title": "Inception",
+                "year": 2010,
+                "director": "Christopher Nolan",
+                "genre": ["Action", "Adventure", "Sci-Fi"],
+                "rating": 8.8
+            },
+            {
+                "poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTvYzmCt0-qgc4Yc1AgkRw9_ONiZ5RX1sg53__YVoLs28rfR8M-",
+                "title": "The Shawshank Redemption",
+                "year": 1994,
+                "director": "Frank Darabont",
+                "genre": ["Drama"],
+                "rating": 9.3
+            },
+            {
+                "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                "title": "The Godfather",
+                "year": 1972,
+                "director": "Francis Ford Coppola",
+                "genre": ["Crime", "Drama"],
+                "rating": 9.2
+            },
+            {
+                "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTViAjqYaPH8rSNheAqd11PhVY9p7Ty7BrlSzmXfk5rBD3w8q3m",
+                "title": "Pulp Fiction",
+                "year": 1994,
+                "director": "Quentin Tarantino",
+                "genre": ["Crime", "Drama"],
+                "rating": 8.9
+            },
+            {
+                "poster": "https://contentserver.com.au/assets/598411_p173378_p_v8_au.jpg",
+                "title": "The Dark Knight",
+                "year": 2008,
+                "director": "Christopher Nolan",
+                "genre": ["Action", "Crime", "Drama"],
+                "rating": 9.0
+            },
+            {
+                "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBoUo0lPtAJiO0RyEb_C44usrfMq4VhNN_L8zk_wtd8QQuZzSh",
+                "title": "Schindler's List",
+                "year": 1993,
+                "director": "Steven Spielberg",
+                "genre": ["Biography", "Drama", "History"],
+                "rating": 8.9
+            },
+            {
+                "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSyhNpJyWkY1BIsQvBwKIdzq6mzWOqQtiyshuNC0Lh5FeLbcZAw",
+                "title": "The Lord of the Rings: The Return of the King",
+                "year": 2003,
+                "director": "Peter Jackson",
+                "genre": ["Adventure", "Drama", "Fantasy"],
+                "rating": 8.9
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQNgTszE1phYg2G7H4RrgeSEssOw-Kpnh0Si-sF5pVQQrBXJ_6e",
+                "title": "Fight Club",
+                "year": 1999,
+                "director": "David Fincher",
+                "genre": ["Drama"],
+                "rating": 8.8
+            },
+            {
+                "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppDgk99BKVA4TJtWc1FN4-HUkdWrFNfMm1-M0nQ01sIOcbTZu",
+                "title": "Forrest Gump",
+                "year": 1994,
+                "director": "Robert Zemeckis",
+                "genre": ["Drama", "Romance"],
+                "rating": 8.8
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTLp5u6K-3JbpjHWojj0amV3Bcui5_0VedgnrKoNgLO2Uti1oTz",
+                "title": "Star Wars: Episode V - The Empire Strikes Back",
+                "year": 1980,
+                "director": "Irvin Kershner",
+                "genre": ["Action", "Adventure", "Fantasy"],
+                "rating": 8.7
+            },
+            {
+                "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4jfQQt_0vCA4XSwGiWkffC32Tv2oajdWhaYHHVYylYGJ3v17Q",
+                "title": "The Matrix",
+                "year": 1999,
+                "director": "Lana Wachowski, Lilly Wachowski",
+                "genre": ["Action", "Sci-Fi"],
+                "rating": 8.7
+            },
+            {
+                "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuxYKBhyPQq4e_cbYRDfZRjWkUx2GIKlUpUkHiuVeLg2GhN0D",
+                "title": "Goodfellas",
+                "year": 1990,
+                "director": "Martin Scorsese",
+                "genre": ["Biography", "Crime", "Drama"],
+                "rating": 8.7
+            },
+            {
+                "poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT9J7XACn3tlD6v4UXRMvT2wJN8FGCCPeh8U3RkZ6__tR4wGhSo",
+                "title": "The Lord of the Rings: The Fellowship of the Ring",
+                "year": 2001,
+                "director": "Peter Jackson",
+                "genre": ["Adventure", "Drama", "Fantasy"],
+                "rating": 8.8
+            },
+            {
+                "poster": "https://contentserver.com.au/assets/510019_p13013_p_v8_ae.jpg",
+                "title": "The Silence of the Lambs",
+                "year": 1991,
+                "director": "Jonathan Demme",
+                "genre": ["Crime", "Drama", "Thriller"],
+                "rating": 8.6
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSRlDPdCzsvcNb4IqSgv-DdlemiuRp2gJR82B2h620NRU7_Qv7o",
+                "title": "Se7en",
+                "year": 1995,
+                "director": "David Fincher",
+                "genre": ["Crime", "Drama", "Mystery"],
+                "rating": 8.6
+            },
+            {
+                "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn62uboyqipVxLOSlT4kLb-H99r_Q3Hs_912Ar9peLgCB6ln6a",
+                "title": "Gladiator",
+                "year": 2000,
+                "director": "Ridley Scott",
+                "genre": ["Action", "Adventure", "Drama"],
+                "rating": 8.5
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSU0SP40gBSnIxxWMpN4-OYUXDRKsOFZX6L5dNv0srZlwKiAlvy",
+                "title": "The Departed",
+                "year": 2006,
+                "director": "Martin Scorsese",
+                "genre": ["Crime", "Drama", "Thriller"],
+                "rating": 8.5
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSgZqWs8at0E7djB-Rgntwg_fzuZwWl96llZQl6QkHIDHggZSsf",
+                "title": "The Green Mile",
+                "year": 1999,
+                "director": "Frank Darabont",
+                "genre": ["Crime", "Drama", "Fantasy"],
+                "rating": 8.6
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRQ8FDyks__YDKFPRm3Oj4Dd-yMl7pcGtgIM5IX-nd_6oJQrPiN",
+                "title": "The Lord of the Rings: The Two Towers",
+                "year": 2002,
+                "director": "Peter Jackson",
+                "genre": ["Adventure", "Drama", "Fantasy"],
+                "rating": 8.7
+            },
+            {
+                "poster": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_Ikj3OpxYb1YgaleXaWMVlMnWWxccJOYeF5AZ8bZKZqpkE8jo",
+                "title": "Saving Private Ryan",
+                "year": 1998,
+                "director": "Steven Spielberg",
+                "genre": ["Drama", "War"],
+                "rating": 8.6
+            },
+            {
+                "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRf61mker2o4KH3CbVE7Zw5B1-VogMH8LfZHEaq3UdCMLxARZAB",
+                "title": "Interstellar",
+                "year": 2014,
+                "director": "Christopher Nolan",
+                "genre": ["Adventure", "Drama", "Sci-Fi"],
+                "rating": 8.6
+            }
+        ]
+        let con = document.querySelector('.con') // container
+        let input = document.querySelector('.input')    // input
+
+        let inputValue = input.value
+        let arr = []
+        
+        appendMovies()
+
+        function appendMovies(){
+        if(inputValue == ''){
+        con.innerHTML = ''
+        arr = []
+
+        movie_collection.forEach((m) => {
+            arr.push(m)
+            let div = document.createElement('div') // created div
+            div.className = 'movie'
+
+            div.innerHTML = `<img src="${m.poster}" alt="">
+            <h1>${m.title}</h1>
+            <h4>${m.year}</h4>
+            <h4>${m.rating} : IMDb Ratings</h4>
+            <h4>Genre : ${m.genre[0]}</h4>`
+            con.appendChild(div)
+            // console.log(m.title);
+        })
+        }else if( inputValue != ''){
+            con.innerHTML = ''
+            
+            movie_collection.forEach((m) => {
+            let div = document.createElement('div') // created div
+            div.className = 'movie'
+
+            div.innerHTML = `<img src="${m.poster}" alt="">
+            <h1>${m.title}</h1>
+            <h4>${m.year}</h4>
+            <h4>${m.rating} : IMDb Ratings</h4>
+            <h4>Genre : ${m.genre[0]}</h4>`
+            
+            lowerCaseTitle = m.title.toLowerCase()
+            let check = lowerCaseTitle.includes(inputValue)
+            
+            if(check == true){
+                con.appendChild(div) 
+            }
+        })
+        if(con.innerHTML == ''){
+                con.innerHTML = `<h1> Movie name not found`
+            }
+
+        }
+        }
+        
+        input.addEventListener("keyup",(e) => {
+            
+            inputValue = input.value.toLowerCase()
+            console.log(inputValue);
+            appendMovies()
+        })
+
+        ////////////////////                    SORT                     ///////////////////
+        let count = 0
+
+        sortBtn = document.querySelector('.sortBox img')
+        sortBox = document.querySelector('.sortBox')
+        let option = document.querySelector('.option')
+        sortBtn.addEventListener("click", () => {
+            console.log('click');
+            
+            if(count == 0){
+                
+                sortBox.style.height = '13vw'
+                
+                option.style.transform = "scaleY(100%)"
+
+                count = 1
+            }else{
+                
+                sortBox.style.height = '1vw'
+                
+                option.style.transform = "scaleY(0%)"
+
+                count = 0
+            }
+        })
+
+
+        let sort =  document.querySelector('.sortBtn')
+        sort.addEventListener("click",() => {
+            
+            let type = document.querySelector(".select")
+            let order = document.querySelector(".order")
+            
+
+            if(type.value != "type"){
+                
+                if(type.value == "year"){
+                    year(order.value)
+                }
+                else if(type.value == "abc"){
+                    abc(order.value)
+                }
+                else if(type.value == "rating"){
+                    rating(order.value)
+                }
+                else if(type.value == "genre"){
+                    genre(order.value)
+                }
+            }
+            
+            
+
+            
+        })
+
+        function year(order){
+            con.innerHTML = ""
+            
+            if(order == "asc"){
+                arr.sort((a,b) =>  a.year - b.year)
+            }
+            else if(order == "dec"){
+                arr.sort((a,b) =>  b.year - a.year)
+            }
+            arr.forEach((m) => {
+                
+            let div = document.createElement('div') // created div
+            div.className = 'movie'
+
+            div.innerHTML = `<img src="${m.poster}" alt="">
+            <h1>${m.title}</h1>
+            <h4>${m.year}</h4>
+            <h4>${m.rating} : IMDb Ratings</h4>
+            <h4>Genre : ${m.genre[0]}</h4>`
+            con.appendChild(div)
+            })
+        //    console.log(movie_collection);
+        //    console.log(arr);
+      
+    }
+    function abc(order){
+        con.innerHTML = ""
+
+        if(order == "asc"){
+            arr.sort((a,b) => {
+            let titleA = a.title.toUpperCase()
+            let titleB = b.title.toUpperCase()
+
+            if(titleA < titleB){
+                return -1
+            }
+
+            if(titleA > titleB){
+                return 1
+            }
+
+            return 0
+        })
+        }
+        else if(order == "dec"){
+            arr.sort((a,b) => {
+            let titleA = a.title.toUpperCase()
+            let titleB = b.title.toUpperCase()
+
+            if(titleA < titleB){
+                return 1
+            }
+
+            if(titleA > titleB){
+                return -1
+            }
+
+            return 0
+        })
+        }
+        arr.forEach((m) => {
+                
+                let div = document.createElement('div') // created div
+                div.className = 'movie'
+    
+                div.innerHTML = `<img src="${m.poster}" alt="">
+                <h1>${m.title}</h1>
+                <h4>${m.year}</h4>
+                <h4>${m.rating} : IMDb Ratings</h4>
+                <h4>Genre : ${m.genre[0]}</h4>`
+                con.appendChild(div)
+                })
+        
+    }
+        
+    function rating(order){
+        con.innerHTML = ""
+
+        if(order == "asc"){
+            arr.sort((a,b) => a.rating - b.rating)
+        }
+        else if(order == "dec"){
+            arr.sort((a,b) => b.rating - a.rating)
+        }
+
+        arr.forEach((m) => {
+                
+                let div = document.createElement('div') // created div
+                div.className = 'movie'
+    
+                div.innerHTML = `<img src="${m.poster}" alt="">
+                <h1>${m.title}</h1>
+                <h4>${m.year}</h4>
+                <h4>${m.rating} : IMDb Ratings</h4>
+                <h4>Genre : ${m.genre[0]}</h4>`
+                con.appendChild(div)
+                })
+     }
+    ////////////////////////////               Genre           /////////////////////////// 
+     function genre(order){
+        con.innerHTML = ""
+        
+        movie_collection.forEach((m) => {
+            let div = document.createElement('div') // created div
+            div.className = 'movie'
+
+            div.innerHTML = `<img src="${m.poster}" alt="">
+            <h1>${m.title}</h1>
+            <h4>${m.year}</h4>
+            <h4>${m.rating} : IMDb Ratings</h4>
+            <h4>Genre : ${m.genre[0]}</h4>`
+            
+            lowerCaseTitle = m.genre[0].toLowerCase()
+            let check = lowerCaseTitle.includes(order)
+            
+            if(check == true){
+                con.appendChild(div) 
+            }
+        })
+     }
+     
+     let order = document.querySelector('.order')
+     let select = document.querySelector(".select")
+
+     let a = select.value
+        select.addEventListener("click", () => {
+            
+            if(select.value == "genre"){
+                order.innerHTML = `<option value="animation">Animation</option>
+                <option value="action">Action</option>
+                <option value="drama">Drama</option>  
+                <option value="crime">Crime</option>
+                <option value="biography">Biography</option> 
+                <option value="adventure">Adventure</option>`
+            }
+            else{
+                order.innerHTML = `<option value="asc">Ascending</option>
+                <option value="dec">Descending</option>`
+            }
+        })
+    
+    </script>
+</body>
+
+</html>
