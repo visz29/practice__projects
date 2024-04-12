@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .reset {
+            width: 5vw;
+            height: 5vw;
+            background: url('./reset.png');
+            background-size: 100%;
+            position: absolute;
+            top: 4vh;
+            right: 4vh;
+
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*///////////////////           start points show         /////////////////// */
+        .point_box {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: 30%;
+            left: 30%;
+            transition: 0.2s;
+            z-index: 2;
+        }
+
+        .cookiesContent {
+            /* position: absolute;
+    top: 30%;
+    left: 30%; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            border-radius: 20px;
+            padding: 30px 30px 70px;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+
+            button.close {
+                width: 30px;
+                font-size: 20px;
+                color: #c0c5cb;
+                align-self: flex-end;
+                background-color: transparent;
+                border: none;
+                margin-bottom: 10px;
+            }
+
+            img {
+                width: 82px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                margin-bottom: 40px;
+                font-size: 18px;
+            }
+
+            button.accept {
+                background-color: #ed6755;
+                border: none;
+                border-radius: 5px;
+                width: 200px;
+                padding: 14px;
+                font-size: 16px;
+                color: white;
+                box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+            }
+
+
+        }
+
+        /*///////////////////           End points show         /////////////////// */
+
+        h1 {
+            text-align: center;
+        }
+
+        .game {
+            background: rgba(0, 88, 110, 0.527);
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            padding: 0;
+            border-radius: 5vw;
+            box-shadow: rgba(100, 100, 111, 0.9) 0px 7px 29px 0px;
+            overflow: hidden;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .heading {
+            margin-bottom: 0vw;
+            text-align: center;
+            font-size: 3vh;
+            margin-bottom: 3vh;
+            margin-top: 0.5vh;
+        }
+
+        .rules {
+            margin-bottom: 12vh;
+            text-align: center;
+        }
+
+        input[type=text] {
+            box-decoration-break: clone;
+            outline: none;
+            height: 10vw;
+            width: 15vw;
+            font-size: 7vw;
+            text-align: center;
+            border: 0.2vw solid rgba(255, 255, 255, 0.616);
+            background: transparent;
+            border-radius: 3vw;
+            box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px;
+            backdrop-filter: blur(2px);
+        }
+
+        .btn {
+            margin-top: 8vh;
+            margin-bottom: 2vh;
+            width: 30vw;
+            height: 10vh;
+            border-radius: 5vw;
+            border: 1px solid white;
+            background: rgba(211, 211, 211, 0.281);
+            font-size: 2.5vh;
+            box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+            backdrop-filter: blur(2px);
+        }
+
+        h5 {
+            text-align: center;
+            font-size: 2.5vh;
+        }
+        video{
+            z-index: -1;
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border-radius: 5vw;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="point_box"></div>
+
+
+    <div class="reset"></div>
+    <div class="game">
+        <video src="../videoplayback.mp4" muted autoplay loop></video>
+        <h1 class="heading">Number Guessing Game</h1>
+        <p class="rules">Try and guess a random number between 1 and 5 You have 5 attempt to guess the right
+            number.When you guess correctly you will get 5 points.</p>
+        <div class="box">
+
+            <h1>Guess a number</h1>
+            <div class="num"><input type="text" class="user" ><input type="text" class="randon" value="&#128187;"></div>
+            <button class="btn">Start Game</button>
+            <h5 class="wrong">Your Guess : </h5>
+            <h5 class="right">Random Guess : </h5>
+            <h5 class="remain">Guesses Remaining : </h5>
+            <h5 class="points">Points : </h5>
+        </div>
+    </div>
+</body>
+<script>
+
+    console.log('reset');
+    // gloable variable diclarations
+    let remains = 5
+    let your_guess = []
+    let random_guess = []
+    let point = 0
+
+    let input = document.querySelector('.user')
+    let randon = document.querySelector('.randon')
+    sym = randon.value
+    randon.disabled = true
+    let btn = document.querySelector('.btn')
+    let wrong = document.querySelector('.wrong')
+    let right = document.querySelector('.right')
+    let remain = document.querySelector('.remain')
+    let poin = document.querySelector('.points')
+
+    ///   Rset
+    function reset() {
+        remains = 5
+        your_guess = []
+        random_guess = []
+        point = 0
+        input.value = ""
+        randon.value = sym
+        btn.innerText = `Start Game`
+        remain.innerText = `Guesses Remaining : `
+        wrong.innerText = `Wrong Guess : `
+        right.innerText = `Right Guess : `
+        poin.innerText = `Points : `
+    }
+    /////
+
+    btn.addEventListener("click", () => {
+        if (btn.innerText === `Submit Guess`) {
+            console.log('submit');
+            if (remains == -1) {
+                alert('no chance left')
+            } else {
+                remain.innerText = `Guesses Remaining : ${remains}`
+                remains -= 1
+                if (remains == -1) {
+                    show()
+                }
+                rand(input.value)
+            }
+
+        } else {
+            btn.innerText = `Submit Guess`
+            remain.innerText = `Guesses Remaining : ${remains}`
+            remains -= 1
+        }
+
+    })
+
+    function rand(input) {
+        let r = Math.floor(Math.random() * 5) + 1
+        randon.value = r
+
+        if (input == r) {
+
+            points(point += 5)
+        }
+        your_guess.push(input)
+        random_guess.push(r)
+
+        wrong.innerText = `Your Guess : ${your_guess}`
+        right.innerText = `Random Guess : ${random_guess}`
+    }
+
+    function points(score) {
+        poin.innerText = `Points : ${point}`
+
+    }
+
+    function show() {
+        let time = setTimeout(my, 2000)
+    }
+    
+    function my() {
+            console.log('hi there');
+            let div = document.createElement('div')
+            div.className = 'container'
+            div.innerHTML = `
+                <div class="cookiesContent" id="cookiesPopup">
+                <button class="close">✖</button>
+                <button class="accept">Points : ${point}</button>
+                </div>`
+            box = document.querySelector('.point_box')
+            box.appendChild(div)
+            box.style.width = '30vw'
+            box.style.height = '10vh'
+
+            let close = document.querySelector('.close')
+            close.addEventListener("click", () => {
+                div.remove()
+            })
+        }
+
+
+    reset()
+    re = document.querySelector('.reset')
+    re.addEventListener("click", () => {
+        reset()
+        console.log('click');
+    })
+
+
+
+
+</script>
+
+</html>
