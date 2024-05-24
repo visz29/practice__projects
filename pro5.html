@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pro5.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(./doremon.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            display: flex;
+            /* justify-content: center; */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+            
+        }
+
+        .heading {
+            color: black;
+            margin: 1vw;
+        }
+
+        .work {
+            color: white;
+            border-radius: 2vw;
+            width: 70%;
+            height: 75%;
+            background: rgba(255, 255, 255, 0.219);
+            backdrop-filter: blur(7px);
+            border: 1vh solid rgba(255, 255, 255, 0.473);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* flex-direction: column; */
+            transition: 0.8s;
+            border-radius: 2.5vh;
+        }
+
+        .innerHead {
+            color: white;
+            font-size: 5vh;
+        }
+
+        .user {
+            color: white;
+            border-radius: 2vw;
+            width: 85%;
+            height: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .lang {
+            margin: 2%;
+            width: 22vh;
+            height: 12vh;
+            background: cornsilk;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4.5vh;
+            border-radius: 2.5vh;
+        }
+        .level{
+            width: 10vh;
+            height: 20vh;
+            background: cyan;
+        }
+
+       
+        .page{
+            width: 50%;
+            height: 60%;
+            background: rgb(183, 248, 248);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 3vh;
+            transition: 0.5s;
+        }
+        .ques{
+            width: 90%;
+            /* height: 20%; */
+            background: rgba(255, 255, 255, 0.493);
+            font-size: 1.6vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2vh;
+            
+            margin-bottom: 10vh;
+            border-radius: 3vh;
+            padding: 0.9vh;
+        }
+        .opt{
+            width: 85%;
+            height: 10%;
+            background: rgba(128, 128, 128, 0.466);
+            margin: 0.2vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3vh;
+            font-size: 2vh;
+            text-align: left;
+            word-wrap: break-word;
+            transition: 0.4s;
+        }
+        .btns{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        button{
+            width: 10vh;
+            height: 5vh;
+            border-radius: 2vw;
+            margin: 1vh;
+            border: none;
+            outline: none;
+            background: cornflowerblue;
+            transition: 0.5s;
+            font-size: 2vh;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">MCQ Test for Interview</h1>
+
+    <div class="work">
+        <h1 class="innerHead">Select Test</h1>
+        <div class="user">
+            <div id="lan" class="lang">HTML</div>
+            <div id="lan" class="lang">CSS</div>
+            <div id="lan" class="lang">javaScript</div>
+        </div>
+        <!-- loader starts -->
+    <div class="loader">
+        <div class="div1"><h1>Loding..</h1></div>
+        <div class="div2"></div>
+    </div>
+        <!-- Loader ends -->
+        
+    </div>
+    
+
+</body>
+<script>
+
+
+    let language;
+    let zInd = 0
+    let index = 0
+    const javaScript = [
+        {
+            question: "What is the output of the following code?\n\nlet numbers = [1, 2, 3, 4, 5];\nconsole.log(numbers[3]);",
+            options: {
+                a: "4",
+                b: "5",
+                c: "3",
+                d: "2"
+            },
+            answer: "a"
+        },
+        {
+            question: "Which method is used to add new elements to the end of an array?",
+            options: {
+                a: "append()",
+                b: "push()",
+                c: "addToEnd()",
+                d: "insertEnd()"
+            },
+            answer: "b"
+        },
+        {
+            question: "What does the following code do?\n\nlet fruits = ['apple', 'banana', 'orange'];\nfruits.pop();",
+            options: {
+                a: "Removes the first element",
+                b: "Removes the last element",
+                c: "Adds a new element to the end",
+                d: "Adds a new element to the beginning"
+            },
+            answer: "b"
+        },
+        {
+            question: "How do you access the value 'banana' from the following array?\n\nlet fruits = ['apple', 'banana', 'orange'];",
+            options: {
+                a: "fruits[0]",
+                b: "fruits[2]",
+                c: "fruits['banana']",
+                d: "fruits.value('banana')"
+            },
+            answer: "b"
+        },
+        {
+            question: "Which method can be used to remove an element from a specific index in an array?",
+            options: {
+                a: "remove()",
+                b: "delete()",
+                c: "splice()",
+                d: "pop()"
+            },
+            answer: "c"
+        }
+    ];
+    const html = [
+        {
+            question: "What does HTML stand for?",
+            options: {
+                a: "Hyper Text Markup Language",
+                b: "Hyperlinks and Text Markup Language",
+                c: "Home Tool Markup Language",
+                d: "Hyper Transfer Markup Language"
+            },
+            answer: "a"
+        },
+        {
+            question: "Which HTML tag is used to define an unordered list?",
+            options: {
+                a: "<ul>",
+                b: "<li>",
+                c: "<ol>",
+                d: "<list>"
+            },
+            answer: "a"
+        },
+        {
+            question: "Which tag is used to define an inline frame?",
+            options: {
+                a: "<iframe>",
+                b: "<frame>",
+                c: "<if>",
+                d: "<inlineframe>"
+            },
+            answer: "a"
+        },
+        {
+            question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+            options: {
+                a: "src",
+                b: "alt",
+                c: "title",
+                d: "href"
+            },
+            answer: "b"
+        },
+        {
+            question: "What is the correct HTML for creating a hyperlink?",
+            options: {
+                a: "<a href='http://www.example.com'>\nExample</a>",
+                b: "<a name='http://www.example.com'>\nExample</a>",
+                c: "<a src='http://www.example.com'>\nExample</a>",
+                d: "<hyperlink>http://www.example.com\n</hyperlink>"
+            },
+            answer: "a"
+        }
+    ];
+    const css = [
+  {
+    question: "Which CSS property is used to change the text color of an element?",
+    options: {
+      a: "font-color",
+      b: "color",
+      c: "text-color",
+      d: "text-style"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which CSS property is used to set the background color of an element?",
+    options: {
+      a: "bgcolor",
+      b: "background-color",
+      c: "color",
+      d: "bg-color"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which CSS property is used to control the spacing between lines of text?",
+    options: {
+      a: "line-height",
+      b: "text-spacing",
+      c: "line-spacing",
+      d: "spacing"
+    },
+    answer: "a"
+  },
+  {
+    question: "Which CSS property is used to make text bold?",
+    options: {
+      a: "font-style",
+      b: "text-weight",
+      c: "font-weight",
+      d: "bold"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which CSS property is used to create rounded corners?",
+    options: {
+      a: "corner-radius",
+      b: "rounded-corners",
+      c: "border-radius",
+      d: "corner-style"
+    },
+    answer: "c"
+  }
+];
+    let lang = document.querySelectorAll('.lang')
+    let work = document.querySelector('.work')
+    let nework = work
+    
+    function click(){
+    lang.forEach((e) => {
+        e.addEventListener("click", () => {
+            
+            work.innerHTML = ''
+            work.style.width = '0%'
+            work.style.height = '0%'
+            console.log(e.id);
+            
+            dely(work_change,e)
+            
+        })
+        
+    })
+}
+    click()
+    function dely(f,e,i) {
+        setTimeout(() => {
+            
+            f(e,i)
+
+        }, 600)
+
+    }
+    function work_change(e){
+        if(e.id == 'lan'){
+            work.style.width = '70%'
+            work.style.height = '75%'
+            dely(work_val,e)
+        }else if(e.id == 'lev'){
+            
+            work.style.width = '100%'
+            work.style.height = '90%'
+            work.style.background = 'transparent'
+            work.style.backdropFilter = 'none'
+            work.style.border = 'none'
+            work.style.justifyContent = 'flex-end'
+            dely(qus,e,0)
+        }
+    }
+    function work_val(e){
+        if(e.innerText == 'HTML'){
+            language = html
+            work.innerHTML = `<h1 class="innerHead">Select Level of ${e.innerText}</h1><div class="user">
+            <div id="lev" class="lang">Beginner</div>
+            <div id="lev" class="lang">Intermediate</div>
+            <div id="lev" class="lang">Advance</div>
+        </div>`
+        }else if(e.innerText == 'CSS'){
+            language = css
+            work.innerHTML = `<h1 class="innerHead">Select Level of ${e.innerText}</h1><div class="user">
+            <div id="lev" class="lang">Beginner</div>
+            <div id="lev" class="lang">Intermediate</div>
+            <div id="lev" class="lang">Advance</div>
+        </div>`
+        }else{
+            language = javaScript
+            work.innerHTML = `<h1 class="innerHead">Select Level of ${e.innerText}</h1><div class="user">
+            <div id="lev" class="lang">Beginner</div>
+            <div id="lev" class="lang">Intermediate</div>
+            <div id="lev" class="lang">Advance</div>
+        </div>
+        
+        `
+        }
+        lang = document.querySelectorAll('.lang')
+        click()
+    }
+    function qus(e,i){
+        
+        console.log();
+        pageAdd(i)
+
+        let btns = document.createElement('div')
+        btns.className = 'btns'
+        
+        btns.innerHTML = `
+        <button>Back <<</button>
+        <button>Next >></button>`
+        document.body.appendChild(btns)
+
+
+        btn = document.querySelectorAll('button')
+        btn.forEach((b)=>{
+            b.addEventListener(("click"),()=>{
+                //console.log('click',b);
+                allQues(b)
+
+            })
+        })
+        
+    }
+    function allQues(b){
+        //console.log(b);
+        if(b.innerText == 'Next >>' || b.innerText == "Submit" ){
+            if(index < html.length-1){
+                index += 1
+                show(index)
+                
+            }else if(index == 4){
+                show(index)
+            }   
+        }else if(b.innerText == 'Back <<'){
+            if(index > 0){
+                index -= 1
+                show(index)
+
+            }
+        }
+    }
+    function pageAdd(i){
+            language.forEach((e)=>{
+            let page = document.createElement("div")
+            
+            page.className = "page"
+            page.innerHTML = `
+            <p class="ques">${e.question}</p>
+            `
+            for(q=97; q<=100; q++){
+
+                let v = eval("e.options."+String.fromCharCode(q))
+                let v1 = String.fromCharCode(q)    
+                let div = document.createElement('div')
+                div.className = "opt"
+                div.id = v1
+                div.innerText = v
+                div.value = `${q}`
+                page.appendChild(div)
+            }
+
+            page.style.background = `rgba(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},0.9)`
+            work.appendChild(page)   
+                
+        
+            })
+            
+            show(0)
+        }
+        
+        function show(i){
+            
+            let pages = document.querySelectorAll('.page')
+            let i1 = i+1
+            let i2 = i-1
+            let i3 = i
+            let width = 75
+            let height = 75
+            let top1 = 27.5
+
+            option(pages[i],i)
+            // marksAdd(i)
+            
+            pages[i].style.width = `${width}%`
+            pages[i].style.height = `${height}%`    
+            pages[i].style.display = "flex"
+            pages[i].style.position = "static"
+            pages[i].style.zIndex = `1`
+            pages[i].style.contentVisibility = "visible"
+            // console.log(pages[i].children[1])
+            ///////////////////////////////////////////// submit time//////////////////////////////////
+
+                
+                
+                if( i > 0){
+                    
+                    if(i > html.length-2){
+                    submit(true)
+                    
+                }
+                else{
+                    submit(false)
+                }
+
+                }
+            //////////////////////////////////////////////////// 
+           
+            for(s=i1; s<pages.length; s++){    
+                pages[s].style.position = "absolute"
+                pages[s].style.display = "none"
+            }
+
+            for(s=i2; s>=0; s--){
+                width -= 10
+                zInd -= 1
+                top1 -= 2 
+                pages[s].style.display = "flex"
+                pages[s].style.position = "absolute"
+                pages[s].style.top = `${top1}vh`
+                pages[s].style.width = `${width}%`
+                pages[s].style.height = `${height-10}%`
+                pages[s].style.zIndex = `${zInd}`
+                pages[s].style.contentVisibility = "hidden"
+            }
+            
+        }
+        function option(opt,i2){
+            
+            // console.log(opt.children[1]);
+            let o = []
+            for(i=1; i<=4; i++){
+                 o.push(opt.children[i])
+                 //console.log(opt.children[i].value);
+                 }
+            
+            
+            o.forEach((e)=>{
+                
+                e.addEventListener("click",()=>{
+                    
+                    o.forEach((n)=>{n.style.backgroundColor = "rgba(128, 128, 128, 0.466)";})
+                    
+                    e.style.backgroundColor = "green";
+                    marksAdd(e,i2)
+                })
+            })
+        }
+//////////////////////////////  SUBMIT BUTTON CHANGES  //////////////////////////
+        let count = 0
+
+        function submit(r){
+            console.log("submit");
+            if(r==false){
+                if(count < 3 ){
+
+                    if(count < -1){
+                        count += 10
+                    }else{
+                        count += 1
+                    }
+                }
+            }else if(r==true){
+                if(count > -3 ){
+                    
+                        count -= 5
+                    }
+            }
+            //console.log("count : ",count);
+
+            console.log(r);
+            let btns = document.querySelectorAll("button");
+            let btns1 = []
+            btns.forEach((e)=>{
+                btns1.push(e);
+            })
+
+            console.log(btns1[1].innerText);
+                // btns1[1].addEventListener("",()=>{
+                    
+                    
+                //     if(btns1[1].innerText == "Submit" && r == true){
+                    
+                     
+                //     console.log("count : ",count);
+                //     if(count > 3 ){
+                //         showResult1()
+                //     }
+                //     if(count == 2){count*5}
+                // }
+                // })
+                if(count < -6 ){
+                        showResult1()
+                    }
+                console.log("count : ",count);
+
+           
+            if(r == true){
+                btns1[1].style.backgroundColor = "lightgreen";
+                btns1[1].innerText = "Submit";
+                
+            }else if(r == false){
+                btns1[1].style.backgroundColor = "cornflowerblue";
+                btns1[1].innerText = "Next >>";
+               
+            }
+            
+            
+            
+                
+            
+        }
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////// MARKS AREA /////////////////////////////////////
+let marks = []
+html.forEach((e)=>{
+    marks.push(0)
+})
+console.log(marks);
+
+function marksAdd(e,i){
+    console.log(i);
+    let pages = document.querySelectorAll('.page')
+
+    
+    if(language[i].answer == e.id){
+        marks[i] = 5
+    }else{
+        marks[i] = 0
+    }
+
+
+    console.log(marks);
+}
+
+function showResult1(){
+    let loader = document.createElement('div')
+    loader.className = "loader"
+    loader.innerHTML = `<div class="div1"><h1>Loding..</h1></div>
+        <div class="div2"></div>`
+    work.appendChild(loader)
+    let loader1 = document.querySelector('.loader')
+    loader1.style.zIndex = 2;
+    loader1.style.display = "flex"
+
+   /// Addd marks 
+
+   let result = marks.reduce((z,x)=>{return z+x})
+    
+   setTimeout(()=>{
+    dely(showResult2,result,marks.length*5)
+   },3000)
+   
+}
+
+
+function showResult2(r,m){
+    work.innerHTML = ""
+    let btn = document.querySelector('.btns')
+    btn.style.display = "none"
+    console.log(m,"/",r);
+
+    let result = document.createElement("div")        
+    result.className = "result"
+    result.innerHTML = `<h1>Result</h1>
+      <h2>${m}/${r}</h2>`
+    result.style.width = "0%"
+    result.style.heigth = "0%"
+    result.style.contentVisibility = "hidden"
+    
+    work.appendChild(result)
+
+    dely(showResult3,r,m)
+
+}
+
+function showResult3(){
+    let result = document.querySelector(".result")  
+    result.style.width = "60vw"
+    result.style.heigth = "40vh"
+    result.style.contentVisibility = "visible"
+}
+///////////////////////////// MARKS AREA END///////////////////////////////////
+        
+        
+           
+        
+
+        
+   
+</script>
+
+</html>
