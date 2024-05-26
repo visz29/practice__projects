@@ -1,7 +1,7 @@
 /* loader starts */
 .loader{
-    background: rgba(10, 253, 253, 0.411);
-    background-image: radial-gradient(circle, cyan, cyan, cyan,rgba(10, 253, 253, 0.411),rgba(255, 255, 255, 0.397),transparent); 
+    background: rgba(10, 253, 253, 0.85);
+    /* background-image: radial-gradient(circle, cyan, cyan, cyan,rgba(10, 253, 253, 0.411),rgba(255, 255, 255, 0.397),transparent);  */
     position: absolute;
     top: 20%;
     width: 60%;
@@ -42,7 +42,7 @@ h1 {
 .result{
     width: 60vw;
     height: 40vh;
-    background: pink;
+    background: rgba(255, 192, 203, 0.904);
     display: flex;
     justify-content: center;
     align-items: center;
