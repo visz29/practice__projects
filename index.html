@@ -212,11 +212,12 @@
             background-size: cover;
             border-radius: 3vw;
             display: flex;
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             flex-direction: column;
             justify-content: center;
             align-items: center;
             transition: 0.1s;
+            overflow: scroll;
 
         }
 
@@ -490,6 +491,12 @@
         a.href = 'todolist.html'
         a.setAttribute('class', 'pages')
         a.innerText = "Todo-List"
+        div.appendChild(a)
+
+        var a = document.createElement('a')
+        a.href = 'pro5.html'
+        a.setAttribute('class', 'pages')
+        a.innerText = "Mcq Test"
         div.appendChild(a)
     }
     function product_ele(div) {
