@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<!-- saved from url=(0034)https://visz29.github.io/projects/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -212,7 +213,7 @@
             background-size: cover;
             border-radius: 3vw;
             display: flex;
-            /* flex-wrap: wrap; */
+            flex-wrap: wrap;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -254,7 +255,7 @@
 
 
 
-        
+
 
         .next {
             position: absolute;
@@ -268,11 +269,12 @@
             right: 0;
             border-radius: 5vw;
             transition: 0.5s;
-        } 
+        }
+
         /* GHFGH  ////////////////////////////////////////////////////// */
-        
-        
-        form{
+
+
+        form {
             width: 99%;
             height: 90%;
             display: flex;
@@ -284,7 +286,8 @@
             border: 1vw solid rgba(255, 255, 255, 0.422);
             border-radius: 3vw;
         }
-        .lab{
+
+        .lab {
             width: 70vw;
             height: 10vw;
             display: flex;
@@ -293,21 +296,25 @@
             background-color: transparent;
             transition: 0.3s;
             border-radius: 3vw;
-            
+
         }
-        .lab:hover{
+
+        .lab:hover {
             background-color: rgba(134, 255, 255, 0.184);
             box-shadow: 0px 6px 20px 6px rgba(0, 0, 0, 0.251);
             transition: 0.3s;
         }
-        .last:hover{
+
+        .last:hover {
             background-color: transparent;
             box-shadow: none;
         }
-        .pass{
-            display: flex;    
+
+        .pass {
+            display: flex;
         }
-        h4{
+
+        h4 {
             width: 8vw;
             height: 4vw;
             text-align: center;
@@ -318,7 +325,8 @@
             align-items: center;
             color: azure;
         }
-        .input{
+
+        .input {
             width: 40vw;
             height: 7vw;
             border-radius: 2vw;
@@ -327,7 +335,8 @@
             border: none;
             background-color: rgba(240, 255, 255, 0.459);
         }
-        #eye{
+
+        #eye {
             background-image: url('./assets/eye_close.png');
             background-size: cover;
             width: 6vw;
@@ -336,18 +345,25 @@
             border-radius: 1.2vw;
             transition: 0.3s;
         }
-        #btn{
+
+        #btn {
             width: 15vw;
             height: 5vw;
-            border-radius:2vw;
+            border-radius: 2vw;
             border: none;
             background-color: rgba(231, 222, 225, 0.537);
         }
+        iframe{
+            width: 90%;
+            height: 90%;
+            border: 0px solid transparent;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="video1"><video muted="" autoplay="autoplay" loop="infinite" src="./assets/one_pece.mp4"> </video></div>
+    <div class="video1"><video muted autoplay="autoplay" loop="infinite" src="./assets/one_pece.mp4"> </video></div>
 
     <div class="nav">
         <div id="bar" class="opt">Home</div>
@@ -363,10 +379,10 @@
     <!-- <div class="coludParent"></div> -->
     <div class="cheery">
         <img class="cloud" src="./assets/colud.png" alt="">
-        <video class="video2" autoplay="" muted="" loop="" src="./assets/cheery_blusom.mp4"></video>
+        <video class="video2" autoplay muted loop src="./assets/cheery_blusom.mp4"></video>
     </div>
 
-
+</body>
 <script>
     let homes = {};
     screen_x = 0
@@ -490,12 +506,6 @@
         a.href = 'todolist.html'
         a.setAttribute('class', 'pages')
         a.innerText = "Todo-List"
-        div.appendChild(a)
-
-        var a = document.createElement('a')
-        a.href = 'pro5.html'
-        a.setAttribute('class', 'pages')
-        a.innerText = "Mcq Test"
         div.appendChild(a)
     }
     function product_ele(div) {
@@ -739,7 +749,7 @@
             btn.name = 'btn'
             btn.value = 'Log-In'
             btn.addEventListener('click', (e) => {
-                
+
             })
 
             div3.appendChild(btn)
@@ -751,11 +761,14 @@
             next.innerHTML = "S<br>I<br>G<br>N<br>U<br>P"
             // next.style.right = '92.7%'
 
+            form.innerHTML = ""
+            form.appendChild(h1)
+            frame = document.createElement("iframe")
+            frame.src = "projects/index_log_form.html"
+            form.appendChild(frame)
             form.appendChild(next)
 
-            // setInterval(() => {
-            //     next.style.right = '0%'
-            // },10);
+
 
             let con = document.querySelector('.con')
             con.style.width = '99vw'
@@ -770,8 +783,6 @@
                 con.appendChild(form)
                 form.style.width = '99%'
                 form.style.height = '89%'
-                
-
             })
 
             res = form
@@ -779,12 +790,8 @@
         } else if (fName == 'form2') {
             let res;
             let f = `<form action="" name="form1" class="form1"><h1>Sign-Up</h1>
-        <div class="lab" for="name"><h4>Name</h4><input type="text" name="name1" id="name" class="input"></div><br>
-        <div class="lab" for="email"><h4>Email</h4> <input type="text" name="email" id="email" class="input"></div><br>
-        <div class="lab" for="pass"><h4 style="margin-left: 3vw;">Password</h4><input type="password" name="pass" id="pass" class="input pass"><div id="eye"></div></div><br>
-        <div class="lab" for="re_pass"><h4 style="margin-right: 8vw;">Re-Password</h4><input type="password" name="re_pass" id="re_pass" class="input"></div>
-        <div for="" class="lab last"> <input type="submit" id="btn"></div>
-    </form>`
+                <iframe src="projects/index_sign_form.html" frameborder="0"></iframe>
+                    </form>`
 
             //
             let con = document.querySelector('.con').innerHTML = f
@@ -813,14 +820,14 @@
                     con.appendChild(form)
                     form.style.width = '99%'
                     form.style.height = '89%'
-                    
+
 
                     clearInterval(stop2)
-                }, 1000/3);
+                }, 1000 / 3);
 
             })
             /////////////////////////// form validation 
-            
+
 
             res = form
             return res
@@ -828,6 +835,6 @@
 
     }
 
-    </script>
+</script>
 
-</body></html>
+</html>
