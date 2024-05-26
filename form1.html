@@ -75,7 +75,7 @@
             background-color: rgba(240, 255, 255, 0.459);
         }
         #eye{
-            background-image: url('./img/eye_close.png');
+            background-image: url('./assets/eye_close.png');
             background-size: cover;
             width: 3vw;
             height: 3vw;
@@ -160,12 +160,12 @@
         eye.addEventListener('click',(e)=>{
             e.preventDefault()
             if(c == 0){
-                eye.style.backgroundImage = 'url("./img/eye_open.png")'
+                eye.style.backgroundImage = 'url("./assets/eye_open.png")'
                 pass.type = 'text'
                 c = 1
             }
             else if(c == 1){
-                eye.style.backgroundImage = 'url("./img/eye_close.png")'
+                eye.style.backgroundImage = 'url("./assets/eye_close.png")'
                 pass.type = 'password'
                 c = 0
             }
