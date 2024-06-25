@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body{
+            height: 100%;
+            width: 100%;
+        }
+        #page1{
+            height: 100%;
+            width: 100%;
+            background: cyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }       
+        #page2{
+            height: 100%;
+            width: 100%;
+            background: purple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column  ;
+            gap: 50px;
+        }
+        #page3{
+            height: 100%;
+            width: 100%;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #page4{
+            height: 100%;
+            width: 100%;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #box{
+            height: 300px;
+            width: 300px;
+            background: red;
+        }
+        h1{
+            font-size: 60px;
+            position: relative;
+            background-color: crimson;
+            padding: 10px;
+        }
+        h2{
+            font-size: 60px;
+            padding: 10px;
+            position: relative;
+            background-color: yellow;
+        }              
+    </style>
+</head>
+<body>
+    <div id="page1">
+        <div id="box"></div>
+    </div>
+    <div id="page2">
+        <h1>Hello</h1>
+        <h2>Every One</h2>
+    </div>
+    <div id="page3">
+        <div id="box"></div>
+    </div>
+    <div id="page4">
+        <div id="box"></div>
+    </div>
+    <div id="page5">
+        <div id="box"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.from("#page2 h1",{
+            opacity:0,
+            x:500,
+            duration:2,
+            scrollTrigger:{
+                trigger:"#page2 h1",
+                scroller:"body",
+                markers:false,
+                start:"top 50%",
+                end:"top 60%",
+                scrub:2
+            }
+        })
+        gsap.from("#page2 h2",{
+            opacity:0,
+            x:- 500,
+            duration:2,
+            scrollTrigger:{
+                trigger:"#page2 h2",
+                scroller:"body",
+                markers:false,
+                start:"top 50%",
+                end:"top 60%",
+                scrub:2
+
+            }
+        })
+        gsap.from("#page3 #box",{
+            scale:0,
+            opacity:0,
+            duration:1,
+            rotate:360,
+            scrollTrigger:{
+                trigger:"#page3 #box",
+                scroller:"body",
+                markers:true,
+                start:"top 60%",
+                end:"top 30%",
+                scrub:2
+            }
+        })
+        
+    </script>
+</body>
+</html>

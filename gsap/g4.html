@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #string{
+            width: 80%;
+            height: 20%;
+            background: darkblue;
+        }
+
+    </style>
+</head>
+<body>
+    <audio  autoplay >
+        <source src="file:///C:/Users/Asus/Downloads/guitar1.wav" type="audio/mp3">
+    </audio>
+    <div id="string">
+    <svg width="100%" height="100%" >
+        <path d="M 10 80 Q 500 80 950 80" stroke="white" fill="transparent"/>
+      </svg>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        
+        
+        console.log(typeof window.innerWidth);
+        let wNew;
+        if(window.innerWidth >= 1000){
+            let screenW = window.innerWidth.toString();
+            let w = screenW.split(""); 
+            console.log( w);
+            wNew = [...w.slice(0,2),".",...w.slice(2,w.lenght)]
+        }else{
+            let screenW = window.innerWidth.toString();
+            let w = screenW.split(""); 
+            console.log( w);
+            wNew = [...w.slice(0,1),".",...w.slice(1,w.lenght)]
+        }
+
+        
+        wNew = wNew.join()
+        wNew = wNew.replaceAll(",","");
+        wNew = Number(wNew)
+        // console.log(wNew);
+        // console.log( 70*wNew);
+
+        let path = `M 10 100 Q 230 100 ${78*wNew} 100`;
+
+        gsap.to("svg path",{
+                attr:{d:path}
+            })
+
+        path = `M 10 100 Q 230 100 ${78*wNew} 100`;
+        let string = document.querySelector("#string");
+        let width = string.style.width
+        // console.log(width);
+
+        string.addEventListener("mousemove",(e)=>{
+            path = `M 10 100 Q ${e.offsetX} ${e.offsetY} ${78*wNew} 100`;
+            // console.log("y",e.y);
+            // console.log("x",e.x);
+            // console.log(e);
+
+            gsap.to("svg path",{
+                attr:{d:path},
+                duration:0.5,
+                ease: "elastic.out(1,0.3)"
+            })
+        })
+
+        let path1 = `M 10 100 Q 230 100 ${78*wNew} 100`;
+        string.addEventListener("mouseout",()=>{
+            // console.log("mouse out");
+
+            gsap.to("svg path",{
+                attr:{d:path1},
+                duration:1.5,
+                ease: "elastic.out(1,0.3)"
+            })
+            tune()
+        })
+
+        function tune(){
+            let x = document.querySelector("audio")
+            x.volume = 0.5;
+            x.autoplay = true;
+            x.load();
+
+        }
+    </script>
+</body>
+</html>
