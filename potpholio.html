@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: cyan;
+            overflow-x: hidden;
+        }
+        #back{
+            background: url("back.jpg");
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            z-index: -1;
+            
+        }
+        #nav{
+            height: 10%;
+            width: 90%;
+            background: rgba(255, 255, 0, 0.1);
+            border-radius: 10vw;
+            border: 3px solid rgba(128, 128, 128, 0.455);
+            backdrop-filter: blur(3px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 3%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+
+            #img{
+                height: 100%;
+                width: 15%;
+                background: transparent;
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .leaf{
+                    width: auto;
+                    height: 90%;
+                }
+            }
+            #box{
+                height: 100%;
+                width: 70%;
+                /* background: purple; */
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+
+                #inbox{
+                    width:15%;
+                    height: 100%;
+                    /* background: pink; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2vw;
+                    /* font-size: calc(10px + (35 - 20) * (100vw - 320px) / (1920 - 230)); */
+                    color: white;
+                    font-family: Comic Sans MS;
+                    margin: 1px;
+                    unicode-bidi: bidi-override;
+
+                }
+            }
+            #dow{
+                width: 20%;
+                height: 100%;
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                #btn{
+                    width: 70%;
+                    height: calc(60% - (-3vw + 2vh));
+                    background: transparent;
+                    border: 0.2vw solid lime;
+                    border-radius: 2vw;
+                    color: white;
+                    font-family: Comic Sans MS;
+                    font-size: 2vw;
+                }
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        #page1{
+            width: 90%;
+            height: 85vh;
+            background: rgba(255, 192, 203, 0.145);
+            margin: 5%;
+            margin-top: 16vh;
+            border-radius: 3vw;
+            backdrop-filter: blur(3px);
+            display: grid;
+            justify-items: center;
+            overflow: hidden;
+            
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            
+            #info{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+                align-items: center;
+
+                
+
+                #wel{
+                    /* margin-top: 20%; */
+                    width: 40%;
+                    height: auto;
+                    /* margin-left: 20%; */
+                    /* margin-bottom: 5%; */
+                }
+                #text{
+                    width: 50%;
+                    height: 25%;
+                    /* margin-left: 20%; */
+                    font-size: 100%;
+                    margin-bottom: 10%;
+                }
+                p{
+                    width: 70%;
+                    height: 10%;
+                    /* margin-left: 20%; */
+                    /* margin-bottom: 5%; */
+                    font-family:'Comic Sans MS';
+                    color:white;
+                    font-weight: 3vw;
+                    font-size: 1.7vw;
+                }
+                #btns{
+                    width: 100%;
+                    height: 10%;
+                    background: transparent;
+                    /* margin-top: 10%; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    #btn1{
+                        width: 30%;
+                        height: 90%;
+                        background: lime;
+                        border-radius: 1vw;
+                        border: none;
+                        font-size: 100%;
+                        backdrop-filter: blur(3px);
+                    }
+                    #btn2{
+                        width: 30%;
+                        height: 90%;
+                        background: rgba(245, 245, 245, 0.192);
+                        border-radius: 1vw;
+                        border: none;
+                        font-size: 100%;
+                        backdrop-filter: blur(3px);
+                    }
+                }
+            }
+            #myImg{
+                width: 55%;
+                height: 100%;
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 75%;
+                    height: auto;
+                    border: 3px solid white;
+                    /* transition: 0.1s; */
+                    border-radius: 2vw;
+                    outline: 5px solid red;
+                    outline-color: cyan;
+                    outline-offset:1vw;
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                }
+            }
+        }
+        
+        
+
+        #page2{
+            width: 90%;
+            height: 100vh;
+            background: rgba(255, 192, 203, 0.173);
+            position: relative;
+            margin: 5%;
+            border-radius: 3vw;
+            backdrop-filter: blur(3px);
+        }
+    </style>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div id="back"></div>
+    <div id="nav">
+        <div id="img"><img class="leaf" src="leaf.png" alt=""></div>
+        <div id="box">
+            <div id="inbox">About</div>
+            <div id="inbox">Skills</div>
+            <div id="inbox">Protfolio</div>
+            <div id="inbox">Testimonials</div>
+        </div>
+        <div id="dow">
+            <button id="btn">Download CV</button>
+        </div>
+    </div>
+    <div id="page1">
+        <div id="info">
+            <img id="wel" src="wel.png" alt="sorry Image not found!">
+            <div id="text">
+                <h1 style="color: greenyellow;">I</h1>
+                <h1 style="color: black;">have</h1>
+                <h1 style="color: greenyellow;">Creative</h1>
+                <h1 style="color: black;">Design</h1>
+                <h1 style="color: greenyellow;">Ixperience</h1>
+            </div>
+            <p>I am Vishal, a product Designer, I have been helping businesses to sovle their problems with my design for 1 plus years</p>
+            <div id="btns">
+                <button id="btn1">Contact Me..</button>
+                <button id="btn2">View Protfolio</button>
+            </div>
+            
+        </div>
+        <div id="myImg">
+            <img class="me" src="Krishna.png" alt="Sorry something went wrong!">
+        </div>
+    </div>
+    <div id="page2"></div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<script>
+    gsap.from("#page1",{
+        background:"black",
+        duration:2,
+        delay:0,
+    })
+    gsap.from("#info",{
+        opacity:0,
+        x:200,
+        duration:2,
+        delay:1,
+    })
+    gsap.from("#myImg",{
+        opacity:0,
+        y:200,
+        duration:2,
+        delay:0.5
+    })
+    gsap.from(".me",{
+        outline: "100px solid red",
+        outlineColor:"transparent",
+        outlineOffset:"-10vw",
+        duration:1.5
+    })
+    gsap.to("#myImg",{
+        x:100,
+        duration:1,
+        delay:0.5,
+        scrollTrigger:{
+            trigger:"#page1 .me",
+            sroller:"body",
+            markers:true,
+            start:"top 10%",
+            end:"top 30%",
+            scrub:2
+        }
+    })
+    
+    
+</script>
+</html>
