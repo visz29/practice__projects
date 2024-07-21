@@ -119,7 +119,7 @@ getMovies = async (url) => {
     let responce = await fetch(url)
     data = await responce.json()
     }catch(error){
-        console.log("Can't catch data from API ! ");
+        //console.log("Can't catch data from API ! ");
     }
     
     // console.log(data.results);
@@ -148,7 +148,7 @@ function showMovies(data){
         div.children[0].children[0].innerHTML = n.title
         div.children[0].children[2].innerHTML = n.release_date + '<br> overview :' + n.overview
 
-        console.log(n)
+        //console.log(n)
         
 
         movieBox.appendChild(div)
@@ -220,7 +220,7 @@ function showInfo(movie){
             // m.children[0].style.transition = '0.5s'
 
             if( m.children[0].style.top != '50%'){
-            console.log(m.children);
+           // console.log(m.children);
             m.children[0].style.top = '50%'
             }else{
                 m.children[0].style.top = '100%'
