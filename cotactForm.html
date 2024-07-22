@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #form {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    input {
+                        width: 60%;
+                        height: 10%;
+                        border-radius: 1vh;
+                        background: transparent;
+                        border: none;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                        outline: none;
+                        padding-left: 5%;
+                        padding-right: 5%;
+                        margin-bottom: 8%;
+                        margin-top: 4%;
+                        text-wrap: wrap;
+                        caret-color: #b5b5fa;
+                        font-size: calc(1.9vh + 1.9vw);
+                    }
+                    .mess{
+                        width: 60%;
+                        height: 10%;
+                        text-wrap: wrap;
+                        word-wrap: break-word;
+                        word-break: break-all;
+                        text-wrap: wrap;
+                    }
+
+                    ::placeholder {
+                        color: #b5b5fa;
+                        opacity: 1;
+                        /* Firefox */
+                        font-size: calc(2vh + 2vw);
+
+                    }
+
+                    button {
+                        width: 30%;
+                        height: 7%;
+                        border-radius: 1vh;
+                        /* From https://css.glass */
+                        background: rgba(255, 255, 255, 0.21);
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(4px);
+                        -webkit-backdrop-filter: blur(4px);
+                        border: 1px solid rgba(255, 255, 255, 0.89);
+                    }
+
+                }
+        
+        
+
+    </style>
+</head>
+<body>
+    <form id="form"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdQbkJoFcw2EtrtpROzMyhd6We2iJpqB3NwWXC11GnnC7FakA/formResponse"
+                target="" method="POST" id="mG61Hd"
+                method="post">
+                <input type="text" placeholder="Name" class="color1" name="entry.419178912"><br>
+                <input type="text" placeholder="Email" name="entry.1292498114"><br>
+                <input class="mess" type="textarea" placeholder="Message" name="entry.345345831">
+                <button type="submit" id="sub">Submit</button>
+            </form>
+    <!-- https://docs.google.com/forms/d/e/1FAIpQLSdQbkJoFcw2EtrtpROzMyhd6We2iJpqB3NwWXC11GnnC7FakA/viewform?usp=pp_url
+     
+     entry.419178912=vishal
+     entry.1292498114=vis@gmail.com
+     entry.345345831=hi+there -->
+
+</body>
+</html>
