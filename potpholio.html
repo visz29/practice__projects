@@ -1,34 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <style>
-        
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
+
+        body {
             width: 100vw;
             height: 100vh;
-            background: cyan;
+            /* background: cyan; */
             overflow-x: hidden;
+            /* background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            
         }
-        #back{
-            background: url("assets/pot_back.jpg");
+
+        #top{
+            position: absolute;
+            top: 0%;
+            width: 1px;
+            height: 1px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .color1{
+            color: black;
+        }
+
+        #back {
+            /* background: url("back.jpg"); */
+            background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+            /* background-image: linear-gradient(33deg, rgba(2,0,36,1) 46%, rgba(0,32,111,1) 90%, rgba(0,1,255,1) 100%); */
+
             width: 100%;
-            height: 100%;
+            height: 110%;
             position: fixed;
             top: 0;
             left: 0;
             background-size: cover;
+
             z-index: -1;
-            
+            transition: 0.5s;
+
+
         }
-        #nav{
+
+        #mode {
+            transition: 0.5s;
+            width: 5vw;
+            height: 5vw;
+            position: fixed;
+            /* background: url("file:///C:/Users/Asus/Downloads/night.png"); */
+            background: url("file:///C:/Users/Asus/Downloads/day.png");
+            background-size: cover;
+            top: 17vh;
+            right: 5vw;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-position: 70% 70%;
+        }
+
+        @media (max-width:550px) {
+            #mode {
+                width: 10vw;
+                height: 10vw;
+                top: 12vh;
+                right: 6vw;
+            }
+
+        }
+
+        #nav {
             height: 10%;
             width: 90%;
             background: rgba(255, 255, 0, 0.1);
@@ -44,8 +95,9 @@
             margin-top: 3%;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             display: flex;
+            transition: 5s;
 
-            #img{
+            #img {
                 height: 100%;
                 width: 15%;
                 background: transparent;
@@ -54,12 +106,13 @@
                 justify-content: center;
                 align-items: center;
 
-                .leaf{
+                .leaf {
                     width: auto;
                     height: 90%;
                 }
             }
-            #box{
+
+            #box {
                 height: 100%;
                 width: 70%;
                 /* background: purple; */
@@ -70,30 +123,33 @@
                 justify-content: space-evenly;
                 align-items: center;
 
-                #inbox{
-                    width:15%;
+                #inbox {
+                    width: 15%;
                     height: 100%;
                     /* background: pink; */
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 2vw;
+                    font-size: 2.2vw;
                     /* font-size: calc(10px + (35 - 20) * (100vw - 320px) / (1920 - 230)); */
                     color: white;
                     font-family: Comic Sans MS;
                     margin: 1px;
                     unicode-bidi: bidi-override;
+                    text-decoration: none;
 
                 }
             }
-            #dow{
+
+            #dow {
                 width: 20%;
                 height: 100%;
                 background: transparent;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                #btn{
+
+                #btn {
                     width: 70%;
                     height: calc(60% - (-3vw + 2vh));
                     background: transparent;
@@ -105,14 +161,16 @@
                 }
             }
         }
-        img{
+
+        img {
             width: 100%;
             height: 100%;
         }
-        #page1{
+
+        #page1 {
             width: 90%;
             height: 85vh;
-            background: rgba(255, 192, 203, 0.145);
+            background: rgba(255, 133, 153, 0.149);
             margin: 5%;
             margin-top: 16vh;
             border-radius: 3vw;
@@ -120,11 +178,12 @@
             display: grid;
             justify-items: center;
             overflow: hidden;
-            
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
             gap: 1rem;
             grid-template-columns: repeat(2, 1fr);
-            
-            #info{
+
+            #info {
                 width: 100%;
                 height: 100%;
                 background: transparent;
@@ -133,33 +192,38 @@
                 flex-direction: column;
                 align-items: center;
 
-                
 
-                #wel{
+
+                #wel {
                     /* margin-top: 20%; */
                     width: 40%;
                     height: auto;
+                    filter: drop-shadow(0.6rem 0.6rem 1rem rgba(245, 245, 255, 0.8));
+
                     /* margin-left: 20%; */
                     /* margin-bottom: 5%; */
                 }
-                #text{
+
+                #text {
                     width: 50%;
                     height: 25%;
                     /* margin-left: 20%; */
-                    font-size: 100%;
+                    font-size: calc(1vw + 1.4vh);
                     margin-bottom: 10%;
                 }
-                p{
+
+                p {
                     width: 70%;
                     height: 10%;
                     /* margin-left: 20%; */
                     /* margin-bottom: 5%; */
-                    font-family:'Comic Sans MS';
-                    color:white;
+                    font-family: 'Comic Sans MS';
+                    color: white;
                     font-weight: 3vw;
-                    font-size: 1.7vw;
+                    font-size: calc(1vh + 1vw);
                 }
-                #btns{
+
+                #btns {
                     width: 100%;
                     height: 10%;
                     background: transparent;
@@ -168,7 +232,7 @@
                     justify-content: center;
                     align-items: center;
 
-                    #btn1{
+                    #btn1 {
                         width: 30%;
                         height: 90%;
                         background: lime;
@@ -177,7 +241,8 @@
                         font-size: 100%;
                         backdrop-filter: blur(3px);
                     }
-                    #btn2{
+
+                    #btn2 {
                         width: 30%;
                         height: 90%;
                         background: rgba(245, 245, 245, 0.192);
@@ -188,14 +253,16 @@
                     }
                 }
             }
-            #myImg{
+
+            #myImg {
                 width: 55%;
                 height: 100%;
                 background: transparent;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                img{
+
+                img {
                     width: 75%;
                     height: auto;
                     border: 3px solid white;
@@ -203,15 +270,15 @@
                     border-radius: 2vw;
                     outline: 5px solid red;
                     outline-color: cyan;
-                    outline-offset:1vw;
+                    outline-offset: 1vw;
                     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
                 }
             }
         }
-        
-        
 
-        #page2{
+
+
+        #page2 {
             width: 90%;
             height: 100vh;
             background: rgba(255, 192, 203, 0.173);
@@ -219,89 +286,678 @@
             margin: 5%;
             border-radius: 3vw;
             backdrop-filter: blur(3px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+
+            #lang {
+                width: 100%;
+                height: 20%;
+                /* background: #b5aee4; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: calc(1.7vw + 1.7vh);
+                font-family: "Lemon";
+                margin-bottom: 10%;
+            }
+
+            #langs {
+                width: 300%;
+                height: 40%;
+                /* background: #454c9a; */
+                background: transparent;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+
+                #pro {
+                    width: 9%;
+                    height: 100%;
+                    /* background: lavender; */
+                    background: transparent;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    p {
+                        font-size: calc(2vh + 2vw);
+                        font-family: "Orbitron";
+                        width: 100%;
+                        text-align: center;
+                        margin-bottom: 1vw;
+                    }
+
+                    svg {
+                        width: 100%;
+                        height: 90%;
+                    }
+                }
+            }
         }
+
+        #page3 {
+            width: 90%;
+            height: 100vh;
+            background: rgba(255, 192, 203, 0.173);
+            position: relative;
+            margin: 5%;
+            border-radius: 3vw;
+            backdrop-filter: blur(3px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            #project {
+                width: 100%;
+                height: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    font-size: calc(5vh + 5vw);
+                    color: cyan;
+                }
+
+                p {
+                    font-size: calc(2.5vh + 2.5vw);
+                    font-family: "Lemon";
+                }
+            }
+        }
+
+        #boxDiv {
+            width: 100%;
+            height: 80%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            align-items: center;
+            background: transparent;
+
+            #boxs {
+                width: calc(16vh + 16vw);
+                height: calc(16vh + 16vw);
+                background: rgba(255, 166, 0, 0.219);
+                overflow: hidden;
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                }
+
+            }
+        }
+
+        #page4 {
+            width: 90%;
+            height: 100vh;
+            background: rgba(255, 192, 203, 0.173);
+            position: relative;
+            margin: 5%;
+            border-radius: 3vw;
+            backdrop-filter: blur(3px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+
+                h1 {
+                    font-size: calc(5vh + 5vw);
+                    color: cyan;
+                }
+
+                p {
+                    font-size: calc(2vh + 2vw);
+                    font-family: "Lemon";
+                }
+            }
+
+            #conForm {
+                width: 80%;
+                height: 60%;
+                background: transparent;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                border-radius: 1.5vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+
+                #conInfo {
+                    height: 100%;
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    div {
+                        width: 100%;
+                        height: 20%;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        flex-direction: row;
+                        font-size: calc(1vh + 1vw);
+                    }
+                }
+
+                #form {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    input {
+                        width: 60%;
+                        height: 10%;
+                        border-radius: 1vh;
+                        background: transparent;
+                        border: none;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                        outline: none;
+                        padding-left: 10%;
+                        margin-bottom: 8%;
+                    }
+
+                    ::placeholder {
+                        color: #b5b5fa;
+                        opacity: 1;
+                        /* Firefox */
+                        font-size: calc(1vh + 1vh);
+
+                    }
+
+                    button {
+                        width: 30%;
+                        height: 7%;
+                        border-radius: 1vh;
+                        /* From https://css.glass */
+                        background: rgba(255, 255, 255, 0.21);
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(4px);
+                        -webkit-backdrop-filter: blur(4px);
+                        border: 1px solid rgba(255, 255, 255, 0.89);
+                    }
+
+                }
+            }
+        }
+
+        
     </style>
     <link rel="stylesheet" href="potpholio.css">
 </head>
+
 <body>
-    <div id="back"></div>
+    <div id="top"></div>
+    <div id="back" class="day"></div>
+    <div id="mode"></div>
     <div id="nav">
-        <div id="img"><img class="leaf" src="assets/pot_leaf.png" alt=""></div>
+        <div id="img"><img class="leaf" src="./assets/pot_leaf.png" alt=""></div>
         <div id="box">
-            <div id="inbox">About</div>
-            <div id="inbox">Skills</div>
-            <div id="inbox">Protfolio</div>
-            <div id="inbox">Testimonials</div>
+            <div id="inbox" class="color1"><a class="color1" href="#page4">About</a></div>
+            <div id="inbox" class="color1"><a class="color1" href="#page2">Skills</a></div>
+            <div id="inbox" class="color1"><a class="color1" href="#top">Protfolio</a></div>
+            <div id="inbox" class="color1"><a class="color1" href="#page3">Testimonials</a></div>
         </div>
         <div id="dow">
-            <button id="btn">Download CV</button>
+            <button id="btn" class="color1">Download CV</button>
         </div>
     </div>
     <div id="page1">
         <div id="info">
-            <img id="wel" src="assets/pot_wel.png" alt="sorry Image not found!">
+            <img id="wel" src="./assets/pot_wel.png" alt="sorry Image not found!">
             <div id="text">
-                <h1 style="color: greenyellow;">I</h1>
-                <h1 style="color: black;">have</h1>
-                <h1 style="color: greenyellow;">Creative</h1>
-                <h1 style="color: black;">Design</h1>
-                <h1 style="color: greenyellow;">Ixperience</h1>
+                <h1 style="color: cyan;">I</h1>
+                <h1 class="color1" style="color: black;">have</h1>
+                <h1 style="color: cyan;">Creative</h1>
+                <h1 class="color1" style="color: black;">Design</h1>
+                <h1 style="color: cyan;">Ixperience</h1>
             </div>
-            <p>I am Vishal, a product Designer, I have been helping businesses to sovle their problems with my design for 1 plus years</p>
+            <p class="color1">I am Vishal, a product Designer, I have been helping businesses to sovle their problems
+                with my design
+                for 1 plus years</p>
             <div id="btns">
-                <button id="btn1">Contact Me..</button>
-                <button id="btn2">View Protfolio</button>
+                <button id="btn1" class="color1">Contact Me..</button>
+                <button id="btn2" class="color1">View Protfolio</button>
             </div>
-            
+
         </div>
         <div id="myImg">
-            <img class="me" src="assets/pot_Krishna.png" alt="Sorry something went wrong!">
+            <img class="me" src="./assets/pot_Krishna.png" alt="Sorry something went wrong!">
         </div>
     </div>
-    <div id="page2"></div>
-    
+    <div id="page2">
+        <div id="lang">
+            <p>
+            <h1 class="color2" style="color: cyan;">
+                <</h1>
+                    <p class="color1 heading">Which Language I Know</p>
+                    <h1 style="color: cyan;">></h1>
+                    </Which>
+                    </p>
+        </div>
+        <div id="langs">
+            <div id="pro">
+                <p class="color1">C language</p>
+                <svg xmlns="" viewBox="0 0 490.55 542.02">
+                    <defs>
+                        <style>
+                            .cls-7 {
+                                fill: #669ad0;
+                            }
+
+                            .cls-8 {
+                                fill: #144880;
+                            }
+
+                            .cls-9 {
+                                fill: #07599e;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <path class="cls-7"
+                                d="M489.53,382.86c-1.41-37.32,0-231.14,0-231.14.17-9.74.18-21.2-25.24-34.32C428.92,99.13,317.94,38.67,317.94,38.67L268.14,9.06c-12.61-7.72-20.18-16.82-50,2.36-25.56,16.46-199,110-199,110C7.65,128.34-.09,131,0,163.83L.08,371.9l.69,23.55a23.7,23.7,0,0,0,2.59,10.1h0a21.78,21.78,0,0,0,2.08,3.35l0,.06a23.37,23.37,0,0,0,7.89,6.79l10.92,5.81,9.09,4.83L218.17,530.14,229,536.22c3.86,1.71,13.7,11.52,33,.64,1.65-.94,3.37-2,5.16-3.27.75-.53,1.58-1.09,2.48-1.7l3.4-2.22h0c43-27.66,196.29-110.47,196.29-110.47,1.76-1,3.43-1.92,5-2.75h0l.08,0c5.4-2.88,9.51-5,12.09-10,0,0,0,0,0,0C488.92,401.79,490,394.87,489.53,382.86Zm-88.15-20.54C326,478.67,212.9,450.61,205.3,448.56l-.23-.06-.09,0-.09,0c-66.14-16.44-101-57-119-90.33C71,330.5,67.62,307.82,67.62,307.82c-22.2-159.93,113-205.24,113-205.24C329.38,56.83,401.38,180,401.38,180L320,225.05c-17.5-39.7-65.95-42.39-65.95-42.39C199.28,176.6,168.88,223,168.88,223c-20.37,38.29-14.89,68.57-3,90.13,14,25.44,37,38.74,37,38.74,82.1,33,120.45-35.34,120.45-35.34l79.44,43.51c-.48.74-1,1.48-1.45,2.21Z" />
+                            <path class="cls-8"
+                                d="M402.76,360.07l-79.44-43.51S285,384.87,202.87,351.9c0,0-23-13.3-37-38.74l75.35-42.35Z" />
+                            <path class="cls-8"
+                                d="M486.54,406.36s0,0,0,0c-2.2,5.62-11,9.53-12.09,10l-.08,0h0L273.05,529.66h0l-3.4,2.22-7.64,5-1.66,1.08c-11.58,6-21.22,5.07-29.52-.65l-12.63-7.15L24.3,421.57l-2.44-1.37c-9.38-4.87-14-8.62-16.37-11.23l0-.06a9.25,9.25,0,0,1-2.08-3.35h0a2.15,2.15,0,0,1-.11-1l82.64-46.44c18,33.35,52.86,73.89,119,90.33l.09,0,.09,0,.23.06c7.6,1.87,120.58,27.55,196-86.28.49-.73,1-1.47,1.45-2.21Z" />
+                            <path class="cls-9"
+                                d="M241.23,270.81,486.54,406.36A34,34,0,0,0,490,392.48l.6-242.65s-.56-11.44-7.84-19.06Z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="pro">
+                <p class="color1">Python</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.33 322.65">
+                    <defs>
+                        <style>
+                            .cls-15 {
+                                fill: #4c77bb;
+                            }
+
+                            .cls-16 {
+                                fill: #f9c73b;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="python">
+                            <path class="cls-15"
+                                d="M161.16,0S97.9-.34,85.45,35.32v40h75.71v9.76H36.33S2,90.5,0,163.17c0,0,0,62.92,37.34,74H76l.68-43.06s.33-30.62,40-37.35l81.76-.67c8.19,0,36-8.52,38.36-37.51V39S235.85,3.36,161.16,0ZM118.74,56.7a15.14,15.14,0,1,1,15.14-15.14A15.14,15.14,0,0,1,118.74,56.7Z" />
+                            <path class="cls-16"
+                                d="M322.31,161.49c-1-69.64-36.67-76.71-36.67-76.71H247l-.34,35.33c-3.81,32.19-26,47.77-67.8,46.09l-60.38-.67c-28.94,4.71-33.65,30.28-33.65,30.28v89.83c10.1,37,74.68,37,74.68,37C234.15,320,236.86,286,236.86,286V248h-75.7V237.19h126.5C324.33,220.71,322.31,161.49,322.31,161.49ZM203.56,265.68a15.14,15.14,0,1,1-15.14,15.14A15.14,15.14,0,0,1,203.56,265.68Z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="pro">
+                <p class="color1">Java-script</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.51 579.08">
+                    <defs>
+                        <style>
+                            .cls-19 {
+                                fill: #dab92c;
+                            }
+
+                            .cls-20 {
+                                fill: #fdd839;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="JS">
+                            <path class="cls-19"
+                                d="M0,0,48.25,517.66l207.51,61.42,211.89-60.54L511.51,0ZM237.77,451.86,88.61,411.5V351.83L186.88,379l1.76-266.72h49.13Zm41.24,0V393.07l99.14-25.35,1.76-51L279,333.41V112.31H440.45v61.42L329,172.85V265l101.77-14-12.28,166.7Z" />
+                            <path class="cls-20"
+                                d="M259.7,46.5V537.84l170.22-47.38,41.23-444ZM430.79,250.94l-12.28,166.7L279,451.86V393.07l99.14-25.35,1.76-51L279,333.41V112.31H440.45v61.42L329,172.85V265Z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="pro">
+                <p class="color1">HTML</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374.04 424">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #e35127;
+                            }
+
+                            .cls-2 {
+                                fill: #ee662b;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="html">
+                            <path class="cls-1"
+                                d="M0,0,35.16,380.67,185,424l155.31-43.07L374,.66ZM90.86,316.16,85,243h46.66l3.58,37.23,51.82,13.91,51.81-14.36,4.94-60.11-56.75-.16-104.75-.29L69.78,78H304.4l-3.59,46.65L187.09,126l-65.27.82,3.59,45.31H294.53l-10.77,143.1L187.09,344Z" />
+                            <polygon class="cls-2"
+                                points="238.9 279.82 187.09 294.18 187.09 219.55 243.84 219.71 238.9 279.82" />
+                            <polygon class="cls-2"
+                                points="339.84 32.2 311.12 357.88 187.09 391.08 187.09 343.97 283.76 315.26 294.53 172.16 187.09 172.16 187.09 126.03 300.81 124.61 304.4 77.96 187.09 77.96 187.09 32.2 339.84 32.2" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="pro">
+                <p class="color1">CSS</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372.11 420.76">
+                    <defs>
+                        <style>
+                            .cls-17 {
+                                fill: #0d73b6;
+                            }
+
+                            .cls-18 {
+                                fill: #30a8db;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="css">
+                            <path class="cls-17"
+                                d="M0,0,33.65,379.51l152.41,41.25L337.8,378.17,372.11,0ZM90.17,311.55l-7.4-72.67h47.77l2.69,37,52.83,12.78,52.15-15.48s4.71-57.19,4-56.52c-.35.35-28.73.33-56.18.24-25.82-.08-50.81-.24-50.81-.24l-4.71-48.45H247.63l4-46.43h-178L69.31,72.67H302.8L281.27,311.55l-95.21,26.92Z" />
+                            <path class="cls-18"
+                                d="M238.21,273.19l-52.15,15.48V216.91c27.45.09,55.83.11,56.18-.24C242.92,216,238.21,273.19,238.21,273.19Z" />
+                            <polygon class="cls-18"
+                                points="247.63 168.22 186.06 168.22 186.06 121.79 251.66 121.79 247.63 168.22" />
+                            <polygon class="cls-18"
+                                points="337.8 31.18 309.98 354.17 186.06 389.61 186.06 338.47 281.27 311.55 302.8 72.67 186.06 72.67 186.06 28.93 337.8 31.18" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="pro">
+                <p class="color1">PHP</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 531.36 269.28">
+                    <defs>
+                        <style>
+                            .cls-10 {
+                                fill: #2968ce;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_3" data-name="Layer 3">
+                            <path class="cls-10"
+                                d="M174.83,100q6,6.69,2.87,22.93Q174.42,139.86,165,147.1t-28.6,7.23H117.1l11.85-61h21.76Q168.8,93.33,174.83,100Z" />
+                            <path class="cls-10"
+                                d="M422.65,100q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100ZM265.68,0C119,0,0,60.28,0,134.64S119,269.28,265.68,269.28,531.36,209,531.36,134.64,412.41,0,265.68,0Zm-75.1,160.87a56,56,0,0,1-21.13,12.68q-11.62,3.8-29.62,3.78h-27.2l-7.53,38.75H73.35L101.68,70.33h61q27.56,0,40.19,14.46t7.6,40.38a63.35,63.35,0,0,1-19.94,35.7Zm92.68,16.46,12.53-64.49q2.13-11-1.58-15t-15.8-4H253.23L237,177.33h-31.5L233.84,31.58h31.5L257.8,70.33h28.07q26.47,0,36.54,9.24t6,29.94l-13.18,67.82Zm175.07-52.16a63.26,63.26,0,0,1-19.93,35.7,56,56,0,0,1-21.14,12.68q-11.62,3.8-29.62,3.78H360.45l-7.54,38.75H321.16L349.49,70.33h61.06q27.54,0,40.19,14.46T458.33,125.17ZM398.52,93.33H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16q3.15-16.25-2.87-22.93T398.52,93.33ZM422.65,100q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Z" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+        </div>
+    </div>
+    <div id="page3">
+        <div id="project">
+            <h1>
+                <</h1>
+                    <p class="color1 heading">My Projects</p>
+                    <h1>></h1>
+        </div>
+        <div id="boxDiv">
+            <div id="boxs"><iframe scrolling="no" src="https://visz29.github.io/projects/clock.html"
+                    frameborder="0"></iframe></div>
+            <div id="boxs"><iframe scrolling="no" src="https://visz29.github.io/projects/index.html"
+                    frameborder="0"></iframe></div>
+            <div id="boxs"><iframe src="https://visz29.github.io/projects/popup.html" frameborder="0"></iframe></div>
+            <div id="boxs"><iframe src="https://visz29.github.io/projects/pro5.html" frameborder="0"></iframe></div>
+        </div>
+    </div>
+    <div id="page4">
+        <div>
+            <h1 style="color: cyan;">
+                <</h1>
+                    <p class="color1 heading">Contact Information</p>
+                    <h1 style="color: cyan;">></h1>
+        </div>
+        <div id="conForm">
+            <div id="conInfo">
+                <div id="phone">
+                    <h4 class="color1">Phone</h4>
+                    <h5 class="color1">7973******</h5>
+                </div>
+                <div id="phone">
+                    <h4 class="color1">Address</h4>
+                    <h5 class="color1">Sector ** Chandigarh</h5>
+                </div>
+                <div id="phone">
+                    <h4 class="color1">Email</h4>
+                    <h5 class="color1">vizsplays2@gmail.com</h5>
+                </div>
+            </div>
+            <iframe id="form" src="./cotactForm.html" frameborder="0"></iframe>
+        </div>
+    </div>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
-    gsap.from("#page1",{
-        background:"black",
-        duration:2,
-        delay:0,
+    gsap.from("#page1", {
+        background: "black",
+        duration: 2,
+        delay: 0,
     })
-    gsap.from("#info",{
-        opacity:0,
-        x:200,
-        duration:2,
-        delay:1,
+    gsap.from("#info", {
+        opacity: 0,
+        x: 200,
+        duration: 2,
+        delay: 1,
     })
-    gsap.from("#myImg",{
-        opacity:0,
-        y:200,
-        duration:2,
-        delay:0.5
+    gsap.from("#myImg", {
+        opacity: 0,
+        y: 200,
+        duration: 2,
+        delay: 0.5
     })
-    gsap.from(".me",{
+    gsap.from(".me", {
         outline: "100px solid red",
-        outlineColor:"transparent",
-        outlineOffset:"-10vw",
-        duration:1.5
+        outlineColor: "transparent",
+        outlineOffset: "-10vw",
+        duration: 1.5,
+        animationIterationCount: "infinite"
     })
-    gsap.to("#myImg",{
-        x:100,
-        duration:1,
-        delay:0.5,
-        scrollTrigger:{
-            trigger:"#page1 .me",
-            sroller:"body",
-            markers:true,
-            start:"top 10%",
-            end:"top 30%",
-            scrub:2
+    gsap.to("#myImg", {
+        x: 100,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+            trigger: "#page1 .me",
+            sroller: "body",
+            markers: false,
+            start: "top 10%",
+            end: "top 30%",
+            scrub: 2
         }
     })
-    
-    
+
+    const mode = document.querySelector("#mode")
+    console.log(mode);
+
+    mode.addEventListener("click", () => {
+        const day = "linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%)"
+        const night = "linear-gradient(33deg, rgb(2,0,36) 46%, rgb(0,32,111) 90%, rgb(0,1,255) 100%)"
+
+        let back = document.querySelector("#back")
+        let current_back = back.className;
+
+
+
+
+        if (current_back == "day") {
+            let tl = gsap.timeline()
+            tl.to("#mode", {
+                ease: "elastic.in(1,0.3)",
+                x: 300,
+                duration: 1,
+                rotate: `250deg`
+            }).to("#mode", {
+                ease: "elastic.in(1,0.3)",
+                x: 0,
+                duration: 1,
+                rotate: `0deg`
+            })
+            setTimeout(() => {
+                mode.style.backgroundImage = 'url("./assets/night.png")'
+            }, 1500)
+            setTimeout(() => {
+                changeBack(night, current_back);
+            }, 2100)
+
+            back.className = "night"
+
+        } else if (current_back == "night") {
+            let tl = gsap.timeline()
+            tl.to("#mode", {
+                ease: "elastic.in(1,0.3)",
+                x: 300,
+                duration: 1,
+                rotate: `250deg`
+            }).to("#mode", {
+                ease: "elastic.in(1,0.3)",
+                x: 0,
+                duration: 1,
+                rotate: `0deg`
+            })
+            setTimeout(() => {
+                mode.style.backgroundImage = './assets/day.png")'
+            }, 1500)
+            back.className = "day"
+            setTimeout(() => {
+                changeBack(day, current_back);
+            }, 2100)
+        }
+
+    })
+    let c = 0
+    function changeBack(color, mode) {
+        let rot = 0
+        if (c == 0) {
+            rot = 180
+            c = 1
+        } else {
+            rot = 360
+            c = 0
+        }
+        // back.style.backgroundImage = color;
+        gsap.to("#back", {
+            duration: 1,
+            backgroundImage: color,
+            rotate: 0
+        })
+        console.log(mode);
+        let col = ""
+        if (mode == "day") {
+            col = "white"
+        } else {
+            col = "black"
+        }
+        gsap.to(".color1", {
+            duration: 1,
+            color: col
+        })
+        gsap.to("::placeholder", {
+            duration: 1,
+            color: col
+        })
+    }
+    gsap.to("#langs", {
+        transform: "translateX(-67%)",
+        scrollTrigger: {
+            trigger: "#page2",
+            scroller: "body",
+            markers: true,
+            start: "top 0%",
+            end: "top -150%",
+            scrub: 2,
+            pin: true
+        }
+    })
+    setInterval(() => {
+        let win = window.innerWidth
+        let hin = window.innerHeight
+        if (win <= 550) {
+            let box = document.querySelectorAll("#boxs")
+            //console.log(box.length);
+            if (box.length == 4) {
+                //console.log(box[1]);
+                box.forEach((e, i) => {
+                    if (i == 1 || i == 2) {
+                        //console.log(i)
+                        //console.log(e)
+                        e.style.display = "none"
+                    }
+                })
+
+            }
+
+
+        } else if (hin <= 550) {
+            let box = document.querySelectorAll("#boxs")
+            //console.log(box.length);
+            if (box.length == 4) {
+                //console.log(box[1]);
+                box.forEach((e, i) => {
+                    if (i == 1 || i == 2) {
+                        //console.log(i)
+                        //console.log(e)
+                        e.style.display = "none"
+                    }
+                })
+
+            }
+
+
+        } else {
+            let box = document.querySelectorAll("#boxs")
+            //console.log(box.length);
+            if (box.length == 4) {
+                //console.log(box[1]);
+                box.forEach((e, i) => {
+
+                    e.style.display = "flex"
+
+                })
+
+            }
+        }
+    }, 500)
+    let sub = document.querySelector("#form")
+    console.log(sub.children);
 </script>
+<script>
+
+</script>
+
 </html>
