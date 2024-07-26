@@ -27,11 +27,11 @@
             #text{
                 margin-bottom: 18%;
             }
-            btns{
-                btn1{
+            #btns{
+                #btn1{
                     font-size: 3.5vw;
                 }
-                btn2{
+                #btn2{
                     font-size: 3.5vw;
                 }
             }
