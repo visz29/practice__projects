@@ -893,19 +893,25 @@
 
         
     }else if(time >= 6 && time < 18 ){
+        back.className = "day"
+        current_back = back.className;
+        changeBack(night, current_back);
         changeBack(day, current_back);
         mode.style.backgroundImage = 'url("./assets/day.png")'
-        back.className = "day"
+        
         let color = document.querySelector(".color1")
         
         // color.style.color = "black " 
         //console.log(color);
     }else{
         changeBack(night, current_back);
-        mode.style.backgroundImage = 'url("./assets/night.png")'
         back.className = "night"
+        current_back = back.className;
+        changeBack(night, current_back);
+        mode.style.backgroundImage = 'url("./assets/night.png")'
+        
         let color = document.querySelector(".color1")
-        console.log(color);
+        // console.log(color);
     }
 
 
