@@ -108,6 +108,7 @@
                 padding: 1.5vw;
                 #ball {
                     right: 67%;
+                    font-size: calc(1.2vh + 1.2vw);
                 }
             }
         }
