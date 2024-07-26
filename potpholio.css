@@ -29,8 +29,6 @@
             }
         }
     }
-    
-    
     #page2{
         
         #lang{
@@ -99,6 +97,19 @@
             }
         }
     }
+        #page5 {
+            #txt {
+                height: 30%;
+            }
+    
+            #btnBack {
+                width: 40%;
+                padding: 1.5vw;
+                #ball {
+                    right: 67%;
+                }
+            }
+        }
    
     
 }
