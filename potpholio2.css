@@ -1,0 +1,173 @@
+@media (max-width:1090px) {
+    #nav{
+        #box{
+            #inbox{
+                .nv{
+                    font-size: calc(1vh + 2vw);
+                }
+            }
+        }
+    }
+    
+    #prentSkill {
+        height: 115vh;
+        h1{
+            margin-top: 5%;
+            text-decoration: underline;
+        }
+        .mySkills{
+            margin-top: 10%;
+            text-decoration: underline;
+        }
+        #skills {
+            width: 100vw;
+            height: 110vh;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            margin-top: 5%;
+            gap: 0%;
+            grid-template-columns: repeat(2, 0.5fr);
+
+            .box {
+                margin: 0.5vw;
+                width: 45vw;
+                height: 55vw;
+                background: transparent;
+                overflow: visible;
+            }
+
+            #box {
+                margin: 0.5vw;
+                width: 45vw;
+                height: 70vw;
+                background: transparent;
+                margin-bottom: 5%;
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+                }
+            }
+        }
+    }
+
+
+
+    #page1 {
+        width: 100%;
+        height: 90vh;
+
+        #info {
+            justify-content: center;
+            margin-top: 10%;
+
+            #text {
+                height: 35%;
+
+            }
+
+            #btns {
+                width: 100%;
+                height: 10%;
+                margin-top: 20%;
+
+                #btn1 {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        #myImg {
+            width: 100%;
+            height: 100%;
+
+
+            .img {
+                position: relative;
+                display: flex;
+                top: 40%;
+                width: calc(min(250px) + 100%);
+                height: auto;
+                z-index: -1;
+            }
+        }
+    }
+
+    #pot {
+        width: 100vw;
+        height: 110vw;
+        margin-top: 10%;
+
+        h1 {
+            color: white;
+            margin-bottom: 7%;
+            text-decoration:underline;
+        }
+
+        iframe {
+            width: 100%;
+            height: 67%;
+        }
+
+        .b {
+            position: absolute;
+            margin-top: 15%;
+            width: 100%;
+            height: 67%;
+        }
+    }
+
+    #con {
+        margin-top: 20%;
+
+        #box1 {
+            hr {
+                width: 30%;
+                height: 3%;
+                border: 1.5px solid #BCA831;
+            }
+        }
+        #box2 {
+            width: 100%;
+            height: 75%;
+            background: rgba(255, 225, 0, 0.093);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-wrap: wrap;
+            align-content:center;
+            
+            justify-content: space-around;
+
+            .iBox {
+                width: 40%;
+                height: 25%;
+                margin-bottom: 10%;
+                background: #5479fff4;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                color: #BCA831;
+
+                img {
+                    height: 50%;
+                    width: auto;
+                    margin-right: 7%;
+                }
+            }
+        }
+
+        #box3 {
+            width: 100%;
+            height: 20%;
+            background: transparent;
+        }
+    }
+    }
+
+
+
+@media (max-width:700px) {}

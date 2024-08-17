@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #343846;
+            overflow-x: hidden;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        
+        
+        
+
+        #nav {
+            height: 10%;
+            width: 90%;
+            background: rgba(255, 255, 0, 0);
+            border-radius: 10vw;
+            border: 3px solid
+                /*rgba(128, 128, 128, 0.455)*/
+                transparent;
+            backdrop-filter: blur(3px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 6;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 3%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+            transition: 5s;
+
+            #img {
+                height: 100%;
+                width: 15%;
+                background: transparent;
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .leaf {
+                    width: auto;
+                    height: 90%;
+                }
+            }
+
+            #box {
+                height: 100%;
+                width: 70%;
+                /* background: purple; */
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+
+                #inbox {
+                    width: 15%;
+                    height: 100%;
+                    /* background: pink; */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2.2vw;
+                    /* font-size: calc(10px + (35 - 20) * (100vw - 320px) / (1920 - 230)); */
+                    color: white;
+                    font-family: Comic Sans MS;
+                    margin: 1px;
+                    unicode-bidi: bidi-override;
+                    text-decoration: none;
+
+                }
+            }
+        }
+
+        #page1 {
+            width: 100%;
+            height: 100vh;
+            background: #3b3e47;
+
+            margin-bottom: 6vh;
+            /* border-radius: 3vw; */
+            backdrop-filter: blur(3px);
+            display: flex;
+            justify-items: center;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.295) 0px 4px 12px;
+
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+
+            #info {
+                width: 45%;
+                height: 100%;
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 5%;
+
+                #text {
+                    width: 50%;
+                    height: 50%;
+                    font-size: calc(1vw + 1.4vh);
+
+                }
+
+                #btns {
+                    width: 100%;
+                    height: 10%;
+                    background: transparent;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    #btn1 {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        background: rgba(0, 255, 255, 0.555);
+                        background: transparent;
+                        border: 5px solid #BCA831;
+                        border-radius: 1vw;
+                        font-size: 100%;
+                        backdrop-filter: blur(3px);
+                        transition: 0.6s;
+                        bottom: 0%;
+                        a{
+                            color: #BCA831;
+                            transition: 1s;
+                        }
+                    }
+
+                    #btn1:hover {
+                        bottom: 4%;
+                        scale: 110%;
+                        margin-bottom: 30px;
+                        z-index: 2;
+                        background: rgb(0, 166, 255);
+                        border: 5px solid rgb(0, 166, 255);
+                        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                        a{
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            #myImg {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .img {
+                    position: relative;
+                    display: flex;
+                    top: 40%;
+                    width: calc(min(250px) + 80%);
+                    height: auto;
+                    transition: 0.1s;
+                    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+                    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+                    animation: linear infinite;
+                    animation-duration: 1.5s;
+                    transition-timing-function: ease-in-out;
+                }
+            }
+        }
+
+        #page2 {
+            width: 100%;
+            height: 35vh;
+            background: transparent;
+            display: flex;
+            justify-items: center;
+            overflow: hidden;
+            /* border: 2px solid white; */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            #box1 {
+                width: 80%;
+                height: 90%;
+                /* border: 2px solid yellow; */
+                padding: 5%;
+
+                h1 {
+                    color: white;
+                    font-size: calc(2vh + 2vw);
+                }
+
+                #summ {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin-top: 5%;
+
+                    .hr1 {
+                        border: 3px solid #BCA831;
+                        width: 30%;
+                        margin-top: 1%;
+                        margin-right: 1%;
+                    }
+
+                    p {
+                        font-size: calc(1vh + 1vw);
+                        ;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        #prentSkill {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: calc(1vh + 1vw);
+            color: white;
+            margin-top: calc(3vh + 3vw);
+            h1{
+                margin-bottom: 2%;
+                text-decoration: underline;
+            }
+            #skills {
+                width: 100vw;
+                height: auto;
+                /* border: 2px solid yellow; */
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                gap: 1rem;
+                grid-template-columns: repeat(3, 0.5fr);
+
+                .box {
+                    margin: 0.5vw;
+                    width: 27vw;
+                    height: 40vw;
+                    border-radius: 2vw;
+                    background: transparent;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #box {
+                    margin: 0.5vw;
+                    width: 27vw;
+                    height: 40vw;
+                    border-radius: 2vw;
+                    background: transparent;
+                    overflow: hidden;
+
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        z-index: 0;
+                    }
+
+                    .a {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        bottom: 100%;
+                        background: transparent;
+                        z-index: 5;
+                        backdrop-filter: blur(2px);
+                        font-size: calc(2vh + 2vw);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                    }
+                }
+            }
+        }
+
+        #pot {
+            position: relative;
+            width: 100vw;
+            height: 70vw;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: calc(1vh + 1vw);
+            ;
+            color: white;
+
+            h1 {
+                margin-bottom: 5%;
+                color: white;
+                text-decoration: underline;
+            }
+
+            iframe {
+                width: 90%;
+                height: 80%;
+            }
+
+            .b {
+                position: absolute;
+                width: 90%;
+                height: 70%;
+                margin-top: 4%;
+            }
+        }
+
+        #con {
+            width: 100%;
+            height: 40%;
+            background-color: transparent;
+            margin-top: 2%;
+
+            #box1 {
+                width: 100%;
+                height: 20%;
+                position: relative;
+                top: 10%;
+                background: transparent;
+                display: flex;
+                z-index: 1;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+
+                hr {
+                    width: 40%;
+                    height: 5%;
+                    border: 2px solid #BCA831;
+                }
+
+                h1 {
+                    font-size: calc(2vw + 2vh);
+                    color: white;
+                }
+            }
+
+            #box2 {
+                width: 100%;
+                height: 110%;
+                background: rgba(255, 225, 0, 0.093);
+                background-size: 200%;
+                backdrop-filter: blur(10px);
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: space-around;
+                
+
+                .iBox {
+                    width: 34%;
+                    height: 30%;
+                    background: #5479fff4;
+                    background: #343846;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 2vw;
+                    margin-bottom: 2vw;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+
+                    img {
+                        height: 50%;
+                        width: auto;
+                        margin-right: 7%;
+                    }
+                    h3{
+                        font-size: calc(1vw + 1vh);
+                        color: #BCA831;
+                    }
+                }
+            }
+
+            #box3 {
+                position: relative;
+                bottom: 10%;
+                width: 100%;
+                height: 20%;
+                background: transparent;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                /* background: rgba(255, 225, 0, 0.093); */
+                background-position:10% 10% ;
+                hr {
+                    width: 35%;
+                    height: 5%;
+                    border: 2px solid #BCA831;
+                }
+
+                a{
+                    width: auto;
+                    height: 100%;
+                    border-radius: 15%;
+                    transition: 0.5s;
+                    img{
+                    width: auto;
+                    height: 100%;
+                    border-radius: 15%;
+                    transition: 0.5s;
+                }
+                }
+                a:hover {
+                        scale: 120%;
+                        margin-bottom: 30px;
+                        z-index: 2;
+                        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                        /* filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0)); */
+                        backdrop-filter: blur(2px);
+                        background: rgba(177, 100, 255, 0.21);
+                        background: rgba(250, 69, 184, 0.16);
+                    }
+            }
+        }
+        .last{
+            height: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            margin-top: 10%;
+        }
+    </style>
+    <link rel="stylesheet" href="potpholio2.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="img"><svg class="leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504.99 586.09">
+                <defs>
+                    <style>
+                        .vcls-1 {
+                            fill: #bca831;
+                        }
+
+                        .cls-2 {
+                            fill: #f2efeb;
+                        }
+
+                        .vcls-2,
+                        .cls-3 {
+                            stroke: #231f20;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .vcls-3 {
+                            fill: #f0eee9;
+                            stroke-width: 5px;
+                        }
+
+                        .vcls-4 {
+                            fill: #18171b;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="vcls-1"
+                            d="M393.58,89.16l50,8S384.25,247.46,305,474.53l-15.74-33.45S358,254,370.09,219.7L358,187.4Z" />
+                        <path class="vcls-1"
+                            d="M28.21,0,0,34.32,235.51,550.43l61.24,35.66s-20.88-73.56-104.32-232.37L28.21,10.09Z" />
+                        <path class="vcls-2"
+                            d="M148.37,45.31,87.81,33.64,289.22,441.08s64-179.32,82.89-224.41L352.6,176.3,290.69,343.18Z" />
+                        <path class="vcls-3"
+                            d="M28.21,2.82s145.35,6.39,174.06,14v32.3L87.81,33.64l216.24,441L447.21,87.27,362.42,75.16V43.76L501.59,69.28,323.84,539,305.9,570.86S100.89,165.33,28.21,2.82Z" />
+                        <polyline class="vcls-4"
+                            points="342.84 84.45 440.75 97.23 445.79 87.81 361.01 75.36 361.01 40.71 358.99 40.71 344.19 51.81" />
+                        <polyline class="vcls-4"
+                            points="148.37 45.31 112.6 40.71 203.22 50.24 188.41 62.35 153.87 58.32" />
+                        <path class="vcls-4"
+                            d="M306.84,574s-4,8.75-10.09,11.44c0,0-44.41-109-168.23-366.06L306.84,569.18Z" />
+                    </g>
+                </g>
+            </svg></div>
+        <div id="box">
+            <div id="inbox" class="color1"><a class="color1 nv" href="#page2">About</a></div>
+            <div id="inbox" class="color1"><a class="color1 nv" href="#pot">Protfolio</a></div>
+            <div id="inbox" class="color1"><a class="color1 nv" href="#con">Contact</a></div>
+        </div>
+    </div>
+    <div id="page1">
+        <div id="info">
+            <div id="text">
+                <h1 style="color: white;">I'M</h1>
+                <h1 class="color1" style="color: #BCA831; font-size: calc(1vw + 5vh)">Vishal Bhardwaj</h1>
+                <h1 style="color: white;">Front-End Developer</h1>
+            </div>
+            <div id="btns">
+                <button id="btn1" class="color" ><a href="#con" class="color"  target="">Contact
+                        Me..</a></button>
+            </div>
+        </div>
+        <div id="myImg">
+            <img class="img me" src="me11.png" alt="Sorry something went wrong!">
+            <!-- <video class="img me" src="./glitch.mp4" autoplay loop muted></video> -->
+        </div>
+
+    </div>
+    <div id="page2">
+        <div id="box1">
+            <h1>About</h1>
+            <div id="summ">
+                <hr class="hr1">
+                <p>As a passionate and detail-driven frontend developer, I specialize in crafting intuitive and
+                    responsive user interfaces that bring digital experiences to life. With <span class="color">a strong
+                        foundation in HTML, CSS, and JavaScript</span>, I excel at transforming design concepts into
+                    functional and visually stunning web applications. With a keen eye for design and a commitment to
+                    staying up-to-date with the latest technologies, I continuously strive to deliver high-quality
+                    solutions that exceed expectations. Let's collaborate and bring your vision to life</p>
+            </div>
+        </div>
+    </div>
+    <div id="prentSkill">
+        <h1>My Skills</h1>
+        <div id="skills" class="exSkills">
+            <div class="box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.33 322.65">
+                    <defs>
+                        <style>
+                            .pcls-1 {
+                                fill: #4c77bb;
+                            }
+
+                            .pcls-2 {
+                                fill: #f9c73b;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="python">
+                            <path class="pcls-1"
+                                d="M161.16,0S97.9-.34,85.45,35.32v40h75.71v9.76H36.33S2,90.5,0,163.17c0,0,0,62.92,37.34,74H76l.68-43.06s.33-30.62,40-37.35l81.76-.67c8.19,0,36-8.52,38.36-37.51V39S235.85,3.36,161.16,0ZM118.74,56.7a15.14,15.14,0,1,1,15.14-15.14A15.14,15.14,0,0,1,118.74,56.7Z" />
+                            <path class="pcls-2"
+                                d="M322.31,161.49c-1-69.64-36.67-76.71-36.67-76.71H247l-.34,35.33c-3.81,32.19-26,47.77-67.8,46.09l-60.38-.67c-28.94,4.71-33.65,30.28-33.65,30.28v89.83c10.1,37,74.68,37,74.68,37C234.15,320,236.86,286,236.86,286V248h-75.7V237.19h126.5C324.33,220.71,322.31,161.49,322.31,161.49ZM203.56,265.68a15.14,15.14,0,1,1-15.14,15.14A15.14,15.14,0,0,1,203.56,265.68Z" />
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.55 542.02">
+                    <defs>
+                        <style>
+                            .ccls-1 {
+                                fill: #669ad0;
+                            }
+
+                            .ccls-2 {
+                                fill: #144880;
+                            }
+
+                            .ccls-3 {
+                                fill: #07599e;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <path class="ccls-1"
+                                d="M489.53,382.86c-1.41-37.32,0-231.14,0-231.14.17-9.74.18-21.2-25.24-34.32C428.92,99.13,317.94,38.67,317.94,38.67L268.14,9.06c-12.61-7.72-20.18-16.82-50,2.36-25.56,16.46-199,110-199,110C7.65,128.34-.09,131,0,163.83L.08,371.9l.69,23.55a23.7,23.7,0,0,0,2.59,10.1h0a21.78,21.78,0,0,0,2.08,3.35l0,.06a23.37,23.37,0,0,0,7.89,6.79l10.92,5.81,9.09,4.83L218.17,530.14,229,536.22c3.86,1.71,13.7,11.52,33,.64,1.65-.94,3.37-2,5.16-3.27.75-.53,1.58-1.09,2.48-1.7l3.4-2.22h0c43-27.66,196.29-110.47,196.29-110.47,1.76-1,3.43-1.92,5-2.75h0l.08,0c5.4-2.88,9.51-5,12.09-10,0,0,0,0,0,0C488.92,401.79,490,394.87,489.53,382.86Zm-88.15-20.54C326,478.67,212.9,450.61,205.3,448.56l-.23-.06-.09,0-.09,0c-66.14-16.44-101-57-119-90.33C71,330.5,67.62,307.82,67.62,307.82c-22.2-159.93,113-205.24,113-205.24C329.38,56.83,401.38,180,401.38,180L320,225.05c-17.5-39.7-65.95-42.39-65.95-42.39C199.28,176.6,168.88,223,168.88,223c-20.37,38.29-14.89,68.57-3,90.13,14,25.44,37,38.74,37,38.74,82.1,33,120.45-35.34,120.45-35.34l79.44,43.51c-.48.74-1,1.48-1.45,2.21Z" />
+                            <path class="ccls-2"
+                                d="M402.76,360.07l-79.44-43.51S285,384.87,202.87,351.9c0,0-23-13.3-37-38.74l75.35-42.35Z" />
+                            <path class="ccls-2"
+                                d="M486.54,406.36s0,0,0,0c-2.2,5.62-11,9.53-12.09,10l-.08,0h0L273.05,529.66h0l-3.4,2.22-7.64,5-1.66,1.08c-11.58,6-21.22,5.07-29.52-.65l-12.63-7.15L24.3,421.57l-2.44-1.37c-9.38-4.87-14-8.62-16.37-11.23l0-.06a9.25,9.25,0,0,1-2.08-3.35h0a2.15,2.15,0,0,1-.11-1l82.64-46.44c18,33.35,52.86,73.89,119,90.33l.09,0,.09,0,.23.06c7.6,1.87,120.58,27.55,196-86.28.49-.73,1-1.47,1.45-2.21Z" />
+                            <path class="ccls-3"
+                                d="M241.23,270.81,486.54,406.36A34,34,0,0,0,490,392.48l.6-242.65s-.56-11.44-7.84-19.06Z" />
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 531.36 269.28">
+                    <defs>
+                        <style>
+                            .phcls-1 {
+                                fill: #6181b6;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_3" data-name="Layer 3">
+                            <path class="phcls-1"
+                                d="M174.83,100q6,6.69,2.87,22.93Q174.42,139.86,165,147.1t-28.6,7.23H117.1l11.85-61h21.76Q168.8,93.33,174.83,100Z" />
+                            <path class="phcls-1"
+                                d="M422.65,100q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100ZM265.68,0C119,0,0,60.28,0,134.64S119,269.28,265.68,269.28,531.36,209,531.36,134.64,412.41,0,265.68,0Zm-75.1,160.87a56,56,0,0,1-21.13,12.68q-11.62,3.8-29.62,3.78h-27.2l-7.53,38.75H73.35L101.68,70.33h61q27.56,0,40.19,14.46t7.6,40.38a63.35,63.35,0,0,1-19.94,35.7Zm92.68,16.46,12.53-64.49q2.13-11-1.58-15t-15.8-4H253.23L237,177.33h-31.5L233.84,31.58h31.5L257.8,70.33h28.07q26.47,0,36.54,9.24t6,29.94l-13.18,67.82Zm175.07-52.16a63.26,63.26,0,0,1-19.93,35.7,56,56,0,0,1-21.14,12.68q-11.62,3.8-29.62,3.78H360.45l-7.54,38.75H321.16L349.49,70.33h61.06q27.54,0,40.19,14.46T458.33,125.17ZM398.52,93.33H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16q3.15-16.25-2.87-22.93T398.52,93.33ZM422.65,100q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Zm0,0q-6-6.67-24.13-6.68H376.77l-11.86,61h19.32q19.2,0,28.6-7.23t12.69-24.16Q428.67,106.7,422.65,100Z" />
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.51 579.08">
+                    <defs>
+                        <style>
+                            .jcls-1 {
+                                fill: #dab92c;
+                            }
+
+                            .jcls-2 {
+                                fill: #fdd839;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="JS">
+                            <path class="jcls-1"
+                                d="M0,0,48.25,517.66l207.51,61.42,211.89-60.54L511.51,0ZM237.77,451.86,88.61,411.5V351.83L186.88,379l1.76-266.72h49.13Zm41.24,0V393.07l99.14-25.35,1.76-51L279,333.41V112.31H440.45v61.42L329,172.85V265l101.77-14-12.28,166.7Z" />
+                            <path class="jcls-2"
+                                d="M259.7,46.5V537.84l170.22-47.38,41.23-444ZM430.79,250.94l-12.28,166.7L279,451.86V393.07l99.14-25.35,1.76-51L279,333.41V112.31H440.45v61.42L329,172.85V265Z" />
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374.04 556.96">
+                    <defs>
+                        <style>
+                            .hcls-1 {
+                                fill: #e35127;
+                            }
+
+                            .hcls-2 {
+                                fill: #ee662b;
+                            }
+
+                            .hcls-3 {
+                                fill: #070909;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="html">
+                            <path class="hcls-1"
+                                d="M0,133,35.16,513.63,185,557l155.31-43.07L374,133.62ZM90.86,449.12,85,376h46.66l3.58,37.23,51.82,13.91,51.81-14.36,4.94-60.11-56.75-.16-104.75-.29L69.78,210.92H304.4l-3.59,46.65L187.09,259l-65.27.82,3.59,45.31H294.53l-10.77,143.1-96.67,28.71Z" />
+                            <polygon class="hcls-2"
+                                points="238.9 412.78 187.09 427.14 187.09 352.51 243.84 352.67 238.9 412.78" />
+                            <polygon class="hcls-2"
+                                points="339.84 165.16 311.12 490.84 187.09 524.04 187.09 476.93 283.76 448.22 294.53 305.12 187.09 305.12 187.09 258.99 300.81 257.57 304.4 210.92 187.09 210.92 187.09 165.16 339.84 165.16" />
+                            <polygon class="hcls-3"
+                                points="66.23 0 66.23 22.88 88.1 22.88 88.1 0 110.31 0 110.31 69.64 87.09 69.64 87.54 46.65 66.23 46.77 66.23 69.64 42.01 69.64 42.01 0 66.23 0" />
+                            <polygon class="hcls-3"
+                                points="187.02 0 187.02 22.54 166.16 22.54 166.16 69.64 142.27 69.64 142.27 22.88 121.08 23.21 121.08 0 187.02 0" />
+                            <polygon class="hcls-3"
+                                points="197.11 0 221.34 0 237.7 25.4 251.96 0 277.19 0 277.19 69.64 253.97 69.64 254.53 34.32 237.15 60.22 220.33 34.82 220.66 69.64 197.11 69.53 197.11 0" />
+                            <polygon class="hcls-3"
+                                points="289.3 0 312.85 0 312.85 47.44 346.23 47.44 346.23 69.64 289.3 70.99 289.3 0" />
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372.11 525.24">
+                    <defs>
+                        <style>
+                            .cscls-1 {
+                                fill: #0d73b6;
+                            }
+
+                            .cscls-2 {
+                                fill: #30a8db;
+                            }
+
+                            .cscls-3 {
+                                fill: #141515;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="css">
+                            <path class="cscls-1"
+                                d="M0,104.48,33.65,484l152.41,41.25L337.8,482.65l34.31-378.17ZM90.17,416l-7.4-72.67h47.77l2.69,37,52.83,12.78,52.15-15.48s4.71-57.19,4-56.52c-.35.35-28.73.33-56.18.24-25.82-.08-50.81-.24-50.81-.24l-4.71-48.45H247.63l4-46.43h-178l-4.33-49.12H302.8L281.27,416,186.06,443Z" />
+                            <path class="cscls-2"
+                                d="M238.21,377.67l-52.15,15.48V321.39c27.45.09,55.83.11,56.18-.24C242.92,320.48,238.21,377.67,238.21,377.67Z" />
+                            <polygon class="cscls-2"
+                                points="247.63 272.7 186.06 272.7 186.06 226.27 251.66 226.27 247.63 272.7" />
+                            <polygon class="cscls-2"
+                                points="337.8 135.66 309.98 458.65 186.06 494.09 186.06 442.95 281.27 416.03 302.8 177.15 186.06 177.15 186.06 133.41 337.8 135.66" />
+                            <polygon class="cscls-3"
+                                points="135.59 0.22 78.56 0.22 79.4 70.6 135.59 70.6 135.59 50.92 102.61 50.51 103.12 20.13 135.59 20.64 135.59 0.22" />
+                            <polygon class="cscls-3"
+                                points="147.2 0 147.2 16.37 179.66 51.03 147.2 51.03 147.2 70.37 212.97 70.37 212.97 54.39 181.18 19.07 211.96 19.07 211.96 0 147.2 0" />
+                            <polygon class="cscls-3"
+                                points="225.87 0 225.87 16.37 257.33 50.69 225.87 50.69 225.87 70.37 291.31 70.37 291.31 53.72 259.35 18.9 291.31 19.23 290.64 0 225.87 0" />
+                        </g>
+                    </g>
+                </svg></div>
+        </div>
+    </div>
+    <div id="pot">
+        <h1>Protfolio</h1>
+        <iframe src="https://visz29.github.io/projects/potpholio.html" frameborder="0"></iframe>
+        <div class="b port" ></div>
+
+    </div>
+    <div id="prentSkill" >
+        <h1 class="mySkills">Experience</h1>
+        <div id="skills">
+            <div id="box"><iframe src="https://visz29.github.io/projects/cal.html" frameborder="0"></iframe>
+                <div class="a">Click Here..</div>
+            </div>
+            <div id="box"><iframe src="https://visz29.github.io/projects/clock.html" frameborder="0"></iframe>
+                <div class="a">Click Here..</div>
+            </div>
+            <div id="box"><iframe src="https://visz29.github.io/projects/movie_search.html" frameborder="0"></iframe>
+                <div class="a">Click Here..</div>
+            </div>
+            <div id="box"><iframe src="https://visz29.github.io/projects/popup.html" frameborder="0"></iframe>
+                <div class="a">Click Here..</div>
+            </div>
+            <div id="box"><iframe src="https://visz29.github.io/projects/pro4.html" frameborder="0"></iframe>
+                <div class="a">Click Here..</div>
+            </div>
+            <div id="box"><iframe src="https://visz29.github.io/projects/pro5.html" frameborder="0"></iframe>
+                <div class="a">Click Here..</div>
+            </div>
+        </div>
+    </div>
+    <div id="con">
+        <div id="box1">
+            <hr>
+            <h1>Contact Me</h1>
+            <hr>
+        </div>
+        <div id="box2">
+            <div class="iBox"><img src="./assets/mail.png" alt="none">
+            <h3>visz@gmail.com</h3>
+            </div>
+            <div class="iBox">
+                <img src="./assets/phone1.png" alt="none">
+                <h3>91-11-1234 5678</h3>
+                
+            </div>
+            <div class="iBox">
+                <img src="./assets/location1.png" alt="none">
+                <h3>Chnadigarh, India</h3>
+            </div>
+        </div>
+        <div id="box3">
+            <hr>
+            <a href="https://www.facebook.com/?paipv=0&eav=Afa30gICGgr-uM-Ewe5j9u6xxNov5aQmAf7yI4TPEuTVtZ1ym2FOKf2lDYOZ0E7FN7k&_rdr" target="_blank" title="facebook"><img src="./assets/facebook.png" alt=""></a>
+            <a href="" target="_blank" title="twitter"><img src="./assets/twitter.png"  alt=""></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" title="linkedin"><img src="./assets/linkedin.png" alt=""></a>
+            <a href="https://www.whatsapp.com/" target="_blank" title="whatsapp"><img src="./assets/whatsapp.png" alt=""></a>
+            
+            <hr>
+        </div>
+    </div>
+    <h1 class="last">Thanks for Scrolling</h1>
+    <script>
+        let frame = document.querySelectorAll(".a")
+        console.log(frame);
+
+        frame.forEach((e) => {
+            console.log(e.parentElement.childNodes[0].src);
+
+            e.addEventListener("click", () => {
+                console.log("clicked");
+                console.log(e.parentElement.childNodes[0].src)
+                window.location.href = e.parentElement.childNodes[0].src
+            })
+        })
+
+        let port = document.querySelector(".port")
+        port.addEventListener("click", () => {
+            let src = port.parentElement.children[1].src
+            window.location.href = src
+        })
+
+    </script>
+</body>
+
+</html>
