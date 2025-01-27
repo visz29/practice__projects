@@ -11,3 +11,5 @@ You Tube  : https://visz29.github.io/projects/you_Tube.html
 Guess the Number :  https://visz29.github.io/projects/pro4.html
 
 Movies Search :  https://visz29.github.io/projects/popup.html
+
+Mock Test :  https://visz29.github.io/Mcq_test/
