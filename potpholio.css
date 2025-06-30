@@ -37,8 +37,8 @@
     #page3{
         #boxDiv{
             #boxs{
-                width: calc(14vh + 14vw);
-                height: calc(14vh + 14vw);
+                width: 75%;
+                height: 75%;
             }
         }
     }
