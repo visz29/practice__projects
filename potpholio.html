@@ -162,7 +162,7 @@
                     border-radius: 2vw;
                     color: white;
                     font-family: Comic Sans MS;
-                    font-size: 2vw;
+                    font-size: 1.5vw;
                 }
             }
         }
@@ -210,12 +210,20 @@
                 }
 
                 #text {
-                    width: 50%;
+                    width: 90%;
                     height: 25%;
                     /* margin-left: 20%; */
-                    font-size: calc(1vw + 1.4vh);
-                    margin-bottom: 10%;
+                    font-size: calc(1.5vw + 1.4vh);
+                    margin-bottom: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;                    
                 }
+                /* #text :nth-last-child(1) {
+                    font-size: 30px;
+                    font-size: calc(2vw + 2.4vh);
+                } */
 
                 p {
                     width: 70%;
@@ -243,9 +251,9 @@
                         background: rgba(0, 255, 255, 0.555);
                         border-radius: 1vw;
                         border: none;
-                        font-size: 100%;
+                        font-size: 1.7vw;
                         backdrop-filter: blur(3px);
-                        transition: 1s;
+                        transition: 0.5s;
                         text-decoration: none;
                     }
                     #btn1:hover{
@@ -253,23 +261,25 @@
                         margin-bottom: 30px;
                         z-index: 2;
                         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                        transform: translateX(-30px);
                     }
-
+                    
                     #btn2 {
                         width: 30%;
                         height: 90%;
                         background: rgba(245, 245, 245, 0.192);
                         border-radius: 1vw;
                         border: none;
-                        font-size: 100%;
+                        font-size: 1.7vw;
                         backdrop-filter: blur(3px);
-                        transition: 1s;
+                        transition: 0.5s;
                     }
                     #btn2:hover{
                         scale: 110%;
                         margin-bottom: 30px;
                         z-index: 2;
                         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                        transform: translateX(40px);
                     }
                 }
             }
@@ -599,7 +609,7 @@
         }
         
     </style>
-    <link rel="stylesheet" href="potpholio.css">
+    <link rel="stylesheet" href="potpholio__.css">
 </head>
 
 <body>
@@ -622,14 +632,10 @@
         <div id="info">
             <img id="wel" src="./assets/wel.png" alt="sorry Image not found!">
             <div id="text">
-                <h1 style="color: cyan;">I</h1>
-                <h1 class="color1" style="color: black;">have</h1>
-                <h1 style="color: cyan;">Creative</h1>
-                <h1 class="color1" style="color: black;">Design</h1>
-                <h1 style="color: cyan;">Experience</h1>
+                <h1 style="color: rgb(255, 255, 255);"> Hi I am <span style="color: cyan ;">Vishal</span> </h1>
+                <h1 style="color: rgb(255, 255, 255); font-size: calc(2vw + 1.4vh)"> A <span style="color: cyan ;">MERN Stack</span> developer </h1>
             </div>
-            <p class="color1">I am Vishal, a Front-End Designer, I have been helping businesses to solve their problems
-                with my design
+            <p class="color1">Explore my projects and get to know me better.
                 </p>
             <div id="btns">
                 <button id="btn1" class="color1"><a href="#page4" style="text-decoration: none;" class="color1">Contact Me..</a></button>
@@ -1247,6 +1253,9 @@
             vid.src = ""
         }
     }
+
+    ///////////////////// ON KEY PRESS ///////////////////////
+    
 </script>
 <script>
 
