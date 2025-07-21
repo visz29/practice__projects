@@ -13,3 +13,4 @@ Guess the Number :  https://visz29.github.io/practice__projects/pro4.html
 Movies Search :  https://visz29.github.io/practice__projects/popup.html
 
 Mock Test :  https://visz29.github.io/Mcq_test/
+Filter Movie Name :  https://visz29.github.io/practice__projects/movie_search.html
