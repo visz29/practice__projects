@@ -36,6 +36,7 @@
         .color1{
             color: black;
         }
+        
 
         #back {
             /* background: url("back.jpg"); */
@@ -607,6 +608,28 @@
                 }
             }
         }
+
+        .hover{
+            height: 70px;
+            padding-left: 18px;
+            padding-right: 18px;
+            display: flex;
+            flex-direction: row;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .hover:hover{
+                        scale: 110%;
+                        margin-bottom: 30px;
+                        z-index: 2;
+                        transform: translateY(-6px);
+                        text-shadow: 6px 5px 6px #0c0c0c;
+                        transition: 0.5s;
+        }
+        .navtext:hover{
+            color: cyan;
+        }
         
     </style>
         <link rel="stylesheet" href="potpholio.css">
@@ -621,19 +644,19 @@
             <div id="img"><img class="leaf" src="./assets/electro.png"
                     alt></div>
             <div id="box">
-                <div id="inbox" class="color1"><a class="color1"
+                <div id="inbox" class="color1 navtext"><a class="color1 navtext"
                         href="#page4">About</a></div>
-                <div id="inbox" class="color1"><a class="color1"
+                <div id="inbox" class="color1"><a class="color1 navtext"
                         href="#page2">Skills</a></div>
-                <div id="inbox" class="color1"><a class="color1"
+                <div id="inbox" class="color1"><a class="color1 navtext"
                         href="#top">Protfolio</a></div>
-                <div id="inbox" class="color1"><a class="color1"
+                <div id="inbox" class="color1"><a class="color1 navtext"
                         href="#page3">Testimonials</a></div>
             </div>
             <div id="dow">
                 <button id="btn" class="color1"><a
                         href="https://drive.google.com/file/d/1VdJCZVO8Y85hUyDnQUskzwXvMfzucVHC/view?usp=sharing"
-                        download class="color1"
+                        download class="color1 navtext"
                         style="text-decoration: none;">Download CV</a></button>
             </div>
         </div>
@@ -642,11 +665,12 @@
                 <img id="wel" src="./assets/wel.png"
                     alt="sorry Image not found!">
                 <div id="text">
-                    <h1 style="color: rgb(255, 255, 255);"> Hi I am <span
+                    <h1 class="" style="color: rgb(255, 255, 255);position: relative;display: flex;flex-direction: columns; "> Hi I am <span
+                        class="hover"
                             style="color: cyan ;">Vishal</span> </h1>
-                    <h1
-                        style="color: rgb(255, 255, 255); font-size: calc(2vw + 1.4vh)">
-                        A <span style="color: cyan ;">MERN Stack</span>
+                    <h1 class=""
+                        style="color: rgb(255, 255, 255); font-size: calc(2vw + 1.4vh); position: relative;display: flex;flex-direction: columns;">
+                        A <span style="color: cyan ;" class="hover">MERN Stack</span>
                         developer </h1>
                 </div>
                 <p class="color1">Explore my projects and get to know me better.
